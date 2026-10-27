@@ -1,0 +1,7 @@
+[data] OpenML dataset 37 (version 1)  md5=3cbaa3e54586aa88cf6aacb4033e4470
+[data] 768 rows, classes {0: 500, 1: 268}, zero placeholders {'Glucose': 5, 'BloodPressure': 35, 'SkinThickness': 227, 'Insulin': 374, 'BMI': 11}
+[split] train=614 (pos rate 0.349)  test=154 (pos rate 0.351)
+[xgb] best CV ROC-AUC 0.8406 with {'model__learning_rate': 0.03, 'model__max_depth': 2, 'model__min_child_weight': 1, 'model__n_estimators': 250} (6.12s)
+[cv:xgb] roc_auc=0.841±0.020  accuracy=0.774±0.018  f1=0.650±0.025  precision=0.711±0.056  recall=0.603±0.049
+[cv:logreg] roc_auc=0.843±0.019  accuracy=0.788±0.019  f1=0.655±0.024  precision=0.764±0.060  recall=0.575±0.023
+[save] xgb_pipeline.joblib, logreg_baseline.joblib, model_metadata.json

@@ -1,0 +1,250 @@
+{
+  "url": "http://localhost:8501",
+  "sessions_per_round": 6,
+  "rounds": 4,
+  "concurrent_sessions": 24,
+  "failed_sessions": [],
+  "passed": true,
+  "sessions": [
+    {
+      "patient": "PIMA-0245",
+      "selected": "PIMA-0245 \u00b7 Case 1 \u00b7 p=0.93",
+      "shown": [
+        "PIMA-0245"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0032",
+      "selected": "PIMA-0032 \u00b7 Case 2 \u00b7 p=0.01",
+      "shown": [
+        "PIMA-0032"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0351",
+      "selected": "PIMA-0351 \u00b7 Case 4 \u00b7 p=0.45",
+      "shown": [
+        "PIMA-0351"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0486",
+      "selected": "PIMA-0486 \u00b7 Case 5 \u00b7 p=0.46",
+      "shown": [
+        "PIMA-0486"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0245",
+      "selected": "PIMA-0245 \u00b7 Case 1 \u00b7 p=0.93",
+      "shown": [
+        "PIMA-0245"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0032",
+      "selected": "PIMA-0032 \u00b7 Case 2 \u00b7 p=0.01",
+      "shown": [
+        "PIMA-0032"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0032",
+      "selected": "PIMA-0032 \u00b7 Case 2 \u00b7 p=0.01",
+      "shown": [
+        "PIMA-0032"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0351",
+      "selected": "PIMA-0351 \u00b7 Case 4 \u00b7 p=0.45",
+      "shown": [
+        "PIMA-0351"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0486",
+      "selected": "PIMA-0486 \u00b7 Case 5 \u00b7 p=0.46",
+      "shown": [
+        "PIMA-0486"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0245",
+      "selected": "PIMA-0245 \u00b7 Case 1 \u00b7 p=0.93",
+      "shown": [
+        "PIMA-0245"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0032",
+      "selected": "PIMA-0032 \u00b7 Case 2 \u00b7 p=0.01",
+      "shown": [
+        "PIMA-0032"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0351",
+      "selected": "PIMA-0351 \u00b7 Case 4 \u00b7 p=0.45",
+      "shown": [
+        "PIMA-0351"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0351",
+      "selected": "PIMA-0351 \u00b7 Case 4 \u00b7 p=0.45",
+      "shown": [
+        "PIMA-0351"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0486",
+      "selected": "PIMA-0486 \u00b7 Case 5 \u00b7 p=0.46",
+      "shown": [
+        "PIMA-0486"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0245",
+      "selected": "PIMA-0245 \u00b7 Case 1 \u00b7 p=0.93",
+      "shown": [
+        "PIMA-0245"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0032",
+      "selected": "PIMA-0032 \u00b7 Case 2 \u00b7 p=0.01",
+      "shown": [
+        "PIMA-0032"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0351",
+      "selected": "PIMA-0351 \u00b7 Case 4 \u00b7 p=0.45",
+      "shown": [
+        "PIMA-0351"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0486",
+      "selected": "PIMA-0486 \u00b7 Case 5 \u00b7 p=0.46",
+      "shown": [
+        "PIMA-0486"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0486",
+      "selected": "PIMA-0486 \u00b7 Case 5 \u00b7 p=0.46",
+      "shown": [
+        "PIMA-0486"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0245",
+      "selected": "PIMA-0245 \u00b7 Case 1 \u00b7 p=0.93",
+      "shown": [
+        "PIMA-0245"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0032",
+      "selected": "PIMA-0032 \u00b7 Case 2 \u00b7 p=0.01",
+      "shown": [
+        "PIMA-0032"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0351",
+      "selected": "PIMA-0351 \u00b7 Case 4 \u00b7 p=0.45",
+      "shown": [
+        "PIMA-0351"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0486",
+      "selected": "PIMA-0486 \u00b7 Case 5 \u00b7 p=0.46",
+      "shown": [
+        "PIMA-0486"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    },
+    {
+      "patient": "PIMA-0245",
+      "selected": "PIMA-0245 \u00b7 Case 1 \u00b7 p=0.93",
+      "shown": [
+        "PIMA-0245"
+      ],
+      "banner_ok": true,
+      "n_charts": 3,
+      "exceptions": 0
+    }
+  ]
+}

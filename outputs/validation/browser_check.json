@@ -1,0 +1,177 @@
+{
+  "url": "http://localhost:8501",
+  "channel": "msedge",
+  "n_checks": 29,
+  "n_passed": 29,
+  "n_failed": 0,
+  "checks": [
+    {
+      "check": "browser launched",
+      "passed": true,
+      "detail": "chromium 156.0.4314.42 (channel=msedge)"
+    },
+    {
+      "check": "page 1 Home renders with hero and disclaimer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Home: KPIs show test ROC-AUC 0.822 and top-3 overlap 0.77",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Home: provenance MD5 shown",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "Home: dataset chart + architecture diagram load",
+      "passed": true,
+      "detail": "{'n': 2, 'broken': 0}"
+    },
+    {
+      "check": "Home: no Python exception",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "page 2 Prediction renders for default patient PIMA-0245",
+      "passed": true,
+      "detail": "P = 0.934"
+    },
+    {
+      "check": "Prediction: uncalibrated-probability note shown",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "patient selection updates probability (PIMA-0245 -> PIMA-0032)",
+      "passed": true,
+      "detail": "0.934 -> 0.011"
+    },
+    {
+      "check": "patient selection updates probability (-> PIMA-0078)",
+      "passed": true,
+      "detail": "P = 0.508"
+    },
+    {
+      "check": "what-if: Glucose 184 -> 120 for PIMA-0245 lowers P 0.934 -> 0.735",
+      "passed": true,
+      "detail": "input was 184; P = 0.735"
+    },
+    {
+      "check": "what-if profile propagates to the comparison page",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "reset restores the recorded patient",
+      "passed": true,
+      "detail": "P = 0.934"
+    },
+    {
+      "check": "page 3 LIME renders explanation chart + neighbourhood histogram",
+      "passed": true,
+      "detail": "{'n': 2, 'broken': 0}"
+    },
+    {
+      "check": "LIME stability toggle runs 5 seeds and shows metrics + chart",
+      "passed": true,
+      "detail": "images 2 -> 3; 1.00 0.96 88% 0.58 \u00b1 0.02"
+    },
+    {
+      "check": "page 4 SHAP global tab: importance + beeswarm render, additivity text shown",
+      "passed": true,
+      "detail": "{'n': 5, 'broken': 0}"
+    },
+    {
+      "check": "SHAP patient tab: waterfall + force plot render; margin +2.645, base -0.622",
+      "passed": true,
+      "detail": "{'n': 2, 'broken': 0}"
+    },
+    {
+      "check": "page 5 Comparison: metrics, side-by-side and rank-slope render",
+      "passed": true,
+      "detail": "{'n': 2, 'broken': 0}"
+    },
+    {
+      "check": "page 6 Evaluation / Model performance: table + confusion, ROC, PR, comparison charts",
+      "passed": true,
+      "detail": "{'n': 4, 'broken': 0}, dataframes 4"
+    },
+    {
+      "check": "Evaluation / study tab: KPIs, 3 figures, relationship + band tables",
+      "passed": true,
+      "detail": "{'n': 3, 'broken': 0}"
+    },
+    {
+      "check": "Evaluation / fidelity & stability tab: KPIs, distribution figure, per-patient table",
+      "passed": true,
+      "detail": "{'n': 1, 'broken': 0}"
+    },
+    {
+      "check": "page 7 Case 1 loads: PIMA-0245, P 0.934, 6 figures",
+      "passed": true,
+      "detail": "{'n': 6, 'broken': 0}"
+    },
+    {
+      "check": "page 7 Case 2 loads: PIMA-0032, P 0.011, 6 figures",
+      "passed": true,
+      "detail": "{'n': 6, 'broken': 0}"
+    },
+    {
+      "check": "page 7 Case 3 loads: PIMA-0078, P 0.508, 6 figures",
+      "passed": true,
+      "detail": "{'n': 6, 'broken': 0}"
+    },
+    {
+      "check": "page 7 Case 4 loads: PIMA-0351, P 0.455, 6 figures",
+      "passed": true,
+      "detail": "{'n': 6, 'broken': 0}"
+    },
+    {
+      "check": "page 7 Case 5 loads: PIMA-0486, P 0.459, 6 figures",
+      "passed": true,
+      "detail": "{'n': 6, 'broken': 0}"
+    },
+    {
+      "check": "'Open patient' button carries Case 5 patient into the live pages",
+      "passed": true,
+      "detail": "PIMA-0486 \u00b7 Case 5 \u00b7 p=0.46"
+    },
+    {
+      "check": "no uncaught JavaScript page errors",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no browser console errors",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "console_errors": [],
+  "page_errors": [],
+  "live_lime_r2_PIMA-0245_seed42": 0.594,
+  "screenshots": {
+    "home": "outputs/screenshots/01_home.png",
+    "home_top": "outputs/screenshots/01_home_viewport.png",
+    "prediction": "outputs/screenshots/02_prediction_PIMA-0245.png",
+    "whatif": "outputs/screenshots/03_prediction_whatif_glucose120.png",
+    "lime": "outputs/screenshots/04_lime_PIMA-0245.png",
+    "lime_stability": "outputs/screenshots/05_lime_stability_PIMA-0245.png",
+    "shap_global": "outputs/screenshots/06_shap_global_beeswarm.png",
+    "shap_patient": "outputs/screenshots/07_shap_waterfall_force_PIMA-0245.png",
+    "comparison": "outputs/screenshots/08_comparison_PIMA-0245.png",
+    "eval_models": "outputs/screenshots/09_evaluation_model_performance.png",
+    "eval_study": "outputs/screenshots/10_evaluation_lime_shap_study.png",
+    "eval_stability": "outputs/screenshots/11_evaluation_fidelity_stability.png",
+    "case1": "outputs/screenshots/12_case1_PIMA-0245.png",
+    "case2": "outputs/screenshots/13_case2_PIMA-0032.png",
+    "case3": "outputs/screenshots/14_case3_PIMA-0078.png",
+    "case4": "outputs/screenshots/15_case4_PIMA-0351.png",
+    "case5": "outputs/screenshots/16_case5_PIMA-0486.png",
+    "case5_live_comparison": "outputs/screenshots/17_case5_live_comparison_PIMA-0486.png"
+  }
+}

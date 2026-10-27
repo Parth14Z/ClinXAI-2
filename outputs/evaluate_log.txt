@@ -1,0 +1,18 @@
+[test:XGBoost] acc=0.766 prec=0.688 rec=0.611 f1=0.647 auc=0.822 (95% CI 0.746-0.883)
+[test:LogReg] acc=0.708 prec=0.600 rec=0.500 f1=0.545 auc=0.813 (95% CI 0.740-0.873)
+[shap] additivity max |error| test=1.73e-06 log-odds; naive prob-sum error=3.564
+[study] 20/154 patients (6s)
+[study] 40/154 patients (12s)
+[study] 60/154 patients (18s)
+[study] 80/154 patients (24s)
+[study] 100/154 patients (30s)
+[study] 120/154 patients (35s)
+[study] 140/154 patients (41s)
+[study] 154/154 patients (45s)
+[study] top-3 overlap 0.768, median rank rho 0.821, direction disagreement in 26.0% of patients, seed stability 0.879
+[case 1] High-confidence diabetes-positive prediction: PIMA-0245 - P(positive) = 0.934
+[case 2] High-confidence diabetes-negative prediction: PIMA-0032 - P(positive) = 0.011
+[case 3] Borderline prediction: PIMA-0078 - P(positive) = 0.508, |P - 0.5| = 0.008
+[case 4] LIME-SHAP feature-ranking disagreement: PIMA-0351 - Spearman rho = -0.238, top-3 Jaccard = 0.00 (LIME top-3: Insulin;Age;Pregnancies; SHAP top-3: Glucose;DiabetesPedigreeFunction;BMI)
+[case 5] LIME-SHAP directional disagreement: PIMA-0486 - 2 feature(s) with opposite signs: Glucose;Insulin
+[done] outputs written to C:\Projects\ClinXAI 2\outputs

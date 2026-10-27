@@ -1,0 +1,8 @@
+,XGBoost,Logistic regression
+accuracy,0.7662,0.7078
+precision,0.6875,0.6
+recall,0.6111,0.5
+specificity,0.85,0.82
+f1,0.6471,0.5455
+roc_auc,0.8217,0.813
+average_precision,0.6813,0.6733

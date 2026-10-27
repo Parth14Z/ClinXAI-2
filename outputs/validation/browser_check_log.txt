@@ -1,0 +1,31 @@
+[PASS] browser launched - chromium 156.0.4314.42 (channel=msedge)
+[PASS] page 1 Home renders with hero and disclaimer
+[PASS] Home: KPIs show test ROC-AUC 0.822 and top-3 overlap 0.77
+[PASS] Home: provenance MD5 shown
+[PASS] Home: dataset chart + architecture diagram load - {'n': 2, 'broken': 0}
+[PASS] Home: no Python exception
+[PASS] page 2 Prediction renders for default patient PIMA-0245 - P = 0.934
+[PASS] Prediction: uncalibrated-probability note shown
+[PASS] patient selection updates probability (PIMA-0245 -> PIMA-0032) - 0.934 -> 0.011
+[PASS] patient selection updates probability (-> PIMA-0078) - P = 0.508
+[PASS] what-if: Glucose 184 -> 120 for PIMA-0245 lowers P 0.934 -> 0.735 - input was 184; P = 0.735
+[PASS] what-if profile propagates to the comparison page
+[PASS] reset restores the recorded patient - P = 0.934
+[PASS] page 3 LIME renders explanation chart + neighbourhood histogram - {'n': 2, 'broken': 0}
+[PASS] LIME stability toggle runs 5 seeds and shows metrics + chart - images 2 -> 3; 1.00 0.96 88% 0.58 ± 0.02
+[PASS] page 4 SHAP global tab: importance + beeswarm render, additivity text shown - {'n': 5, 'broken': 0}
+[PASS] SHAP patient tab: waterfall + force plot render; margin +2.645, base -0.622 - {'n': 2, 'broken': 0}
+[PASS] page 5 Comparison: metrics, side-by-side and rank-slope render - {'n': 2, 'broken': 0}
+[PASS] page 6 Evaluation / Model performance: table + confusion, ROC, PR, comparison charts - {'n': 4, 'broken': 0}, dataframes 4
+[PASS] Evaluation / study tab: KPIs, 3 figures, relationship + band tables - {'n': 3, 'broken': 0}
+[PASS] Evaluation / fidelity & stability tab: KPIs, distribution figure, per-patient table - {'n': 1, 'broken': 0}
+[PASS] page 7 Case 1 loads: PIMA-0245, P 0.934, 6 figures - {'n': 6, 'broken': 0}
+[PASS] page 7 Case 2 loads: PIMA-0032, P 0.011, 6 figures - {'n': 6, 'broken': 0}
+[PASS] page 7 Case 3 loads: PIMA-0078, P 0.508, 6 figures - {'n': 6, 'broken': 0}
+[PASS] page 7 Case 4 loads: PIMA-0351, P 0.455, 6 figures - {'n': 6, 'broken': 0}
+[PASS] page 7 Case 5 loads: PIMA-0486, P 0.459, 6 figures - {'n': 6, 'broken': 0}
+[PASS] 'Open patient' button carries Case 5 patient into the live pages - PIMA-0486 · Case 5 · p=0.46
+[PASS] no uncaught JavaScript page errors
+[PASS] no browser console errors
+
+29/29 browser checks passed

@@ -1,0 +1,15 @@
+Dashboard live LIME (fresh explainer, seed 42, 5000 samples) vs study draw
+case pid  | live: top3_overlap jaccard rho  n_dir R2    | study: top3_overlap jaccard rho  n_dir R2
+1    245  | 1.00 1.00 +0.90 0 0.594 | 1.00 1.00 +0.93 0 0.591  dir: live=[] study=nan
+2    32   | 0.67 0.50 +0.88 0 0.393 | 0.67 0.50 +0.83 0 0.391  dir: live=[] study=nan
+3    78   | 0.67 0.50 +0.45 0 0.084 | 0.67 0.50 +0.74 1 0.074  dir: live=[] study=Glucose
+4    351  | 0.00 0.00 -0.07 0 0.030 | 0.00 0.00 -0.24 1 0.029  dir: live=[] study=Glucose
+5    486  | 0.33 0.20 -0.02 0 0.088 | 0.33 0.20 +0.19 2 0.086  dir: live=[] study=Glucose;Insulin
+
+LIME weights across the 10 stability seeds for the conflicting features (materiality threshold |w| >= 0.01)
+PIMA-0078 Glucose  SHAP +0.250 | study draw -0.0220 | seeds: min -0.0275 max -0.0033 mean -0.0158; opposite sign to SHAP in 10/10, material (|w|>=0.01 & opposite) in 7/10
+PIMA-0351 Glucose  SHAP +0.421 | study draw -0.0134 | seeds: min -0.0208 max +0.0006 mean -0.0119; opposite sign to SHAP in 9/10, material (|w|>=0.01 & opposite) in 8/10
+PIMA-0486 Glucose  SHAP +0.483 | study draw -0.0112 | seeds: min -0.0285 max -0.0033 mean -0.0169; opposite sign to SHAP in 10/10, material (|w|>=0.01 & opposite) in 8/10
+PIMA-0486 Insulin  SHAP -0.184 | study draw +0.0325 | seeds: min -0.0016 max +0.0229 mean +0.0112; opposite sign to SHAP in 9/10, material (|w|>=0.01 & opposite) in 5/10
+
+Study-wide: 44 material direction conflicts in 40 patients; LIME |w| < 0.02 in 31 of them; median |LIME w| 0.0165

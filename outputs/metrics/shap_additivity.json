@@ -1,0 +1,23 @@
+{
+  "test": {
+    "n": 154,
+    "max_abs_error_logodds": 1.7285346984863281e-06,
+    "max_abs_error_probability_via_sigmoid": 1.6151791265572868e-07,
+    "max_abs_error_naive_probability_sum": 3.5637360877781434,
+    "tolerance": 0.0001,
+    "additive_in_logodds": true,
+    "probability_recovered_via_sigmoid": true
+  },
+  "train": {
+    "n": 614,
+    "max_abs_error_logodds": 2.5779008865356445e-06,
+    "max_abs_error_probability_via_sigmoid": 2.6095684069193936e-07,
+    "max_abs_error_naive_probability_sum": 3.7253186592324896,
+    "tolerance": 0.0001,
+    "additive_in_logodds": true,
+    "probability_recovered_via_sigmoid": true
+  },
+  "base_value_logodds": -0.6224684119224548,
+  "base_value_as_probability": 0.3492202580482441,
+  "units": "log-odds of diabetes-positive (raw XGBoost margin)"
+}

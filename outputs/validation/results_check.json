@@ -1,0 +1,541 @@
+{
+  "n_checks": 89,
+  "n_passed": 89,
+  "n_failed": 0,
+  "checks": [
+    {
+      "section": "1 provenance",
+      "check": "raw ARFF MD5 equals OpenML's published MD5",
+      "passed": true,
+      "detail": "3cbaa3e54586aa88cf6aacb4033e4470"
+    },
+    {
+      "section": "1 provenance",
+      "check": "SHA-256 matches provenance.json",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "1 provenance",
+      "check": "a one-byte-corrupted copy is rejected by ensure_dataset",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "1 provenance",
+      "check": "768 rows x 8 features, 500 negative / 268 positive",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "2 positive class",
+      "check": "ARFF 'tested_positive' rows == encoded Outcome==1 rows",
+      "passed": true,
+      "detail": "268 raw positive rows"
+    },
+    {
+      "section": "2 positive class",
+      "check": "classifier classes_ == [0, 1]",
+      "passed": true,
+      "detail": "[np.int64(0), np.int64(1)]"
+    },
+    {
+      "section": "2 positive class",
+      "check": "predict_proba[:, 1] == sigmoid(raw margin)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "2 positive class",
+      "check": "column 1 ranks recorded positives higher (AUC > 0.5)",
+      "passed": true,
+      "detail": "AUC with column 1 = 0.8217"
+    },
+    {
+      "section": "2 positive class",
+      "check": "CLASS_NAMES[1] is the diabetes-positive class",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "3 leakage",
+      "check": "train/test patient ids disjoint and cover all 768 rows",
+      "passed": true,
+      "detail": "train 614, test 154"
+    },
+    {
+      "section": "3 leakage",
+      "check": "imputer medians == training-split medians",
+      "passed": true,
+      "detail": "{'Glucose': np.float64(117.0), 'BloodPressure': np.float64(72.0), 'SkinThickness': np.float64(29.0), 'Insulin': np.float64(125.0), 'BMI': np.float64(32.4)}"
+    },
+    {
+      "section": "3 leakage",
+      "check": "imputer medians are not full-data medians (at least one differs)",
+      "passed": true,
+      "detail": "differs for ['BMI']"
+    },
+    {
+      "section": "3 leakage",
+      "check": "refitting best params on the 614 training rows only reproduces the saved model (in memory)",
+      "passed": true,
+      "detail": "best params {'learning_rate': 0.03, 'max_depth': 2, 'min_child_weight': 1, 'n_estimators': 250}"
+    },
+    {
+      "section": "3 leakage",
+      "check": "no fit/tune/CV call in train_model.py receives test data",
+      "passed": true,
+      "detail": "4 fit-type calls inspected"
+    },
+    {
+      "section": "3 leakage",
+      "check": "decision threshold fixed at 0.5",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "4 SHAP additivity",
+      "check": "test: base + sum(SHAP) == log-odds margin",
+      "passed": true,
+      "detail": "max error 1.73e-06"
+    },
+    {
+      "section": "4 SHAP additivity",
+      "check": "test: sigmoid(base + sum(SHAP)) == P(positive)",
+      "passed": true,
+      "detail": "max error 1.62e-07"
+    },
+    {
+      "section": "4 SHAP additivity",
+      "check": "test: errors match shap_additivity.json",
+      "passed": true,
+      "detail": "naive prob + SHAP error 3.564"
+    },
+    {
+      "section": "4 SHAP additivity",
+      "check": "train: base + sum(SHAP) == log-odds margin",
+      "passed": true,
+      "detail": "max error 2.58e-06"
+    },
+    {
+      "section": "4 SHAP additivity",
+      "check": "train: sigmoid(base + sum(SHAP)) == P(positive)",
+      "passed": true,
+      "detail": "max error 2.61e-07"
+    },
+    {
+      "section": "4 SHAP additivity",
+      "check": "train: errors match shap_additivity.json",
+      "passed": true,
+      "detail": "naive prob + SHAP error 3.725"
+    },
+    {
+      "section": "4 SHAP additivity",
+      "check": "shap_values.csv equals freshly computed SHAP values",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "5 model metrics",
+      "check": "xgboost: 8 metrics recomputed == model_metrics.json",
+      "passed": true,
+      "detail": "accuracy 0.766, precision 0.688, recall 0.611, specificity 0.850, f1 0.647, roc_auc 0.822, average_precision 0.681, brier_score 0.163"
+    },
+    {
+      "section": "5 model metrics",
+      "check": "xgboost: confusion matrix",
+      "passed": true,
+      "detail": "TN 85 FP 15 FN 21 TP 33"
+    },
+    {
+      "section": "5 model metrics",
+      "check": "xgboost: ROC-AUC 95% CI reproduced from the test predictions",
+      "passed": true,
+      "detail": "0.7457-0.8831"
+    },
+    {
+      "section": "5 model metrics",
+      "check": "logistic_regression: 8 metrics recomputed == model_metrics.json",
+      "passed": true,
+      "detail": "accuracy 0.708, precision 0.600, recall 0.500, specificity 0.820, f1 0.545, roc_auc 0.813, average_precision 0.673, brier_score 0.175"
+    },
+    {
+      "section": "5 model metrics",
+      "check": "logistic_regression: confusion matrix",
+      "passed": true,
+      "detail": "TN 82 FP 18 FN 27 TP 27"
+    },
+    {
+      "section": "5 model metrics",
+      "check": "logistic_regression: ROC-AUC 95% CI reproduced from the test predictions",
+      "passed": true,
+      "detail": "0.7396-0.8729"
+    },
+    {
+      "section": "5 model metrics",
+      "check": "paired AUC difference and CI reproduced",
+      "passed": true,
+      "detail": "+0.0087 (-0.0177 to +0.0370)"
+    },
+    {
+      "section": "5 model metrics",
+      "check": "CV AUC in metadata (XGB 0.841\u00b10.020, LR 0.843\u00b10.019)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "5 model metrics",
+      "check": "README/report XGBoost figures match saved metrics to 3 d.p.",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "6 explanation study",
+      "check": "per-patient top3_overlap recomputed from raw attribution tables",
+      "passed": true,
+      "detail": "154 patients, 0 mismatches"
+    },
+    {
+      "section": "6 explanation study",
+      "check": "per-patient jaccard_top3 recomputed from raw attribution tables",
+      "passed": true,
+      "detail": "154 patients, 0 mismatches"
+    },
+    {
+      "section": "6 explanation study",
+      "check": "per-patient rank_spearman recomputed from raw attribution tables",
+      "passed": true,
+      "detail": "154 patients, 0 mismatches"
+    },
+    {
+      "section": "6 explanation study",
+      "check": "per-patient n_direction_disagreements recomputed from raw attribution tables",
+      "passed": true,
+      "detail": "154 patients, 0 mismatches"
+    },
+    {
+      "section": "6 explanation study",
+      "check": "per-patient stability_jaccard_top3 recomputed from raw attribution tables",
+      "passed": true,
+      "detail": "154 patients, 0 mismatches"
+    },
+    {
+      "section": "6 explanation study",
+      "check": "per-patient stability_spearman recomputed from raw attribution tables",
+      "passed": true,
+      "detail": "154 patients, 0 mismatches"
+    },
+    {
+      "section": "6 explanation study",
+      "check": "per-patient n_material_sign_flips recomputed from raw attribution tables",
+      "passed": true,
+      "detail": "154 patients, 0 mismatches"
+    },
+    {
+      "section": "6 explanation study",
+      "check": "per-patient sign_consistency recomputed from raw attribution tables",
+      "passed": true,
+      "detail": "154 patients, 0 mismatches"
+    },
+    {
+      "section": "6 explanation study",
+      "check": "headline summary recomputed == explanation_study_summary.json",
+      "passed": true,
+      "detail": "top1_match_rate 0.734, mean_top3_overlap 0.768, mean_jaccard_top3 0.666, median_rank_spearman 0.821, share_with_direction_disagreement 0.260, median_lime_r2 0.232, mean_stability_jaccard_top3 0.879, share_material_sign_flip_across_seeds 0.110"
+    },
+    {
+      "section": "6 explanation study",
+      "check": "LIME stability uses 10 seeds x 5,000 samples per patient",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "6 explanation study",
+      "check": "8 Spearman relationships and Bonferroni flags recomputed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "6 explanation study",
+      "check": "confidence bands recomputed from probabilities",
+      "passed": true,
+      "detail": "{'high-confidence negative': 61, 'moderate': 59, 'borderline': 22, 'high-confidence positive': 12}"
+    },
+    {
+      "section": "7 case studies",
+      "check": "selected patients are 245, 32, 78, 351, 486",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "select_cases on study.csv reproduces the same selection",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 1 = highest P among P >= 0.85",
+      "passed": true,
+      "detail": "P = 0.934, 12 candidates"
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 2 = lowest P among P <= 0.15",
+      "passed": true,
+      "detail": "P = 0.011, 61 candidates"
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 3 = P closest to 0.5 within [0.4, 0.6]",
+      "passed": true,
+      "detail": "P = 0.508, 22 candidates"
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 4 = lowest rank rho among top-3 Jaccard <= 0.5",
+      "passed": true,
+      "detail": "rho = -0.238, Jaccard = 0.00"
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 5 = most direction disagreements (tie-break SHAP mass)",
+      "passed": true,
+      "detail": "2 features: Glucose;Insulin; max in pool = 2"
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 1: LIME table == the study's LIME draw",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 1: stability weights == the study's 10-seed draws",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 1: metrics block == study row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 1: SHAP margin/probability reproduce",
+      "passed": true,
+      "detail": "P = 0.934, margin +2.645"
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 1: LIME instance == SHAP instance == preprocessed patient",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 1: LIME explains P(class 1) == SHAP's sigmoid(margin)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 2: LIME table == the study's LIME draw",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 2: stability weights == the study's 10-seed draws",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 2: metrics block == study row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 2: SHAP margin/probability reproduce",
+      "passed": true,
+      "detail": "P = 0.011, margin -4.525"
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 2: LIME instance == SHAP instance == preprocessed patient",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 2: LIME explains P(class 1) == SHAP's sigmoid(margin)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 3: LIME table == the study's LIME draw",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 3: stability weights == the study's 10-seed draws",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 3: metrics block == study row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 3: SHAP margin/probability reproduce",
+      "passed": true,
+      "detail": "P = 0.508, margin +0.033"
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 3: LIME instance == SHAP instance == preprocessed patient",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 3: LIME explains P(class 1) == SHAP's sigmoid(margin)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 4: LIME table == the study's LIME draw",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 4: stability weights == the study's 10-seed draws",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 4: metrics block == study row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 4: SHAP margin/probability reproduce",
+      "passed": true,
+      "detail": "P = 0.455, margin -0.181"
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 4: LIME instance == SHAP instance == preprocessed patient",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 4: LIME explains P(class 1) == SHAP's sigmoid(margin)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 5: LIME table == the study's LIME draw",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 5: stability weights == the study's 10-seed draws",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 5: metrics block == study row",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 5: SHAP margin/probability reproduce",
+      "passed": true,
+      "detail": "P = 0.459, margin -0.166"
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 5: LIME instance == SHAP instance == preprocessed patient",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "case 5: LIME explains P(class 1) == SHAP's sigmoid(margin)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "documented claim - case 1: P 0.934, truth positive, Jaccard 1.0, rho 0.93, R2 0.59, identical top-3 over 10 seeds",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "documented claim - case 2: P 0.011, truth negative, no sign conflicts, surrogate predicts -0.20 (gap 0.21), Glucose <= 99 top in both",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "documented claim - case 3: P 0.508, truth positive, BMI > 36.5 leads both, Glucose sign conflict, R2 0.07, 3 imputed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "documented claim - case 4: P 0.455, truth negative, Jaccard 0, rho -0.24, LIME top = Insulin, SHAP top = Glucose +0.42 pushed negative by LIME, R2 0.03",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "documented claim - case 5: P 0.459, truth negative, Glucose & Insulin opposite signs, LIME Glucose negative in all 10 seeds, SHAP Glucose +0.48, R2 0.09",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "7 case studies",
+      "check": "cases 3-5: Glucose in (117, 140] bin with LIME weight between -0.011 and -0.022",
+      "passed": true,
+      "detail": "case 3: glucose 131, w -0.0220, case 4: glucose 137, w -0.0134, case 5: glucose 139, w -0.0112"
+    },
+    {
+      "section": "7 case studies",
+      "check": "Insulin quartile edges collapse to 120 / 125 / 130",
+      "passed": true,
+      "detail": "[120. 125. 130.]"
+    },
+    {
+      "section": "8 reproducibility",
+      "check": "SHAP beeswarm renders byte-identically twice (seeded jitter)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "section": "8 reproducibility",
+      "check": "fresh LIME explainer with the same seed gives identical weights (dashboard behaviour)",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

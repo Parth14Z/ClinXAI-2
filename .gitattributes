@@ -1,0 +1,4 @@
+# The raw dataset is verified by MD5 against OpenML's published checksum: never convert its line endings.
+data/raw/*.arff -text
+*.joblib binary
+*.png binary

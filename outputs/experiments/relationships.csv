@@ -1,0 +1,9 @@
+relationship,x,y,n,spearman_rho,p_value,strength,significant_alpha_0.05,significant_bonferroni,bonferroni_threshold
+Confidence vs LIME surrogate R²,confidence,lime_r2,154,0.3266106442577031,3.56406774981689e-05,moderate,True,True,0.00625
+Confidence vs LIME local-prediction gap,confidence,lime_fidelity_gap,154,-0.1154932354173341,0.15377199508142092,weak,False,False,0.00625
+Confidence vs LIME-SHAP rank correlation,confidence,rank_spearman,154,0.25531596055953065,0.0013948814795872377,weak,True,True,0.00625
+Confidence vs LIME-SHAP top-3 Jaccard,confidence,jaccard_top3,154,0.27940817752494823,0.00044933452696124733,weak,True,True,0.00625
+Confidence vs LIME seed stability (top-3 Jaccard),confidence,stability_jaccard_top3,154,0.0016939602452824155,0.9833651220040974,negligible,False,False,0.00625
+LIME R² vs LIME-SHAP rank correlation,lime_r2,rank_spearman,154,0.36524412287231306,3.1996073074913665e-06,moderate,True,True,0.00625
+LIME R² vs LIME seed stability,lime_r2,stability_jaccard_top3,154,0.13676181996596595,0.09077982185289844,weak,False,False,0.00625
+LIME seed stability vs LIME-SHAP rank correlation,stability_jaccard_top3,rank_spearman,154,0.0733426291971427,0.3660161392504598,negligible,False,False,0.00625

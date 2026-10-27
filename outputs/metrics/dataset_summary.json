@@ -1,0 +1,115 @@
+{
+  "n_rows": 768,
+  "n_features": 8,
+  "features": [
+    "Pregnancies",
+    "Glucose",
+    "BloodPressure",
+    "SkinThickness",
+    "Insulin",
+    "BMI",
+    "DiabetesPedigreeFunction",
+    "Age"
+  ],
+  "class_counts": {
+    "0": 500,
+    "1": 268
+  },
+  "positive_rate": 0.349,
+  "zero_placeholders": {
+    "Glucose": 5,
+    "BloodPressure": 35,
+    "SkinThickness": 227,
+    "Insulin": 374,
+    "BMI": 11
+  },
+  "zero_placeholder_pct": {
+    "Glucose": 0.65,
+    "BloodPressure": 4.56,
+    "SkinThickness": 29.56,
+    "Insulin": 48.7,
+    "BMI": 1.43
+  },
+  "describe": {
+    "Pregnancies": {
+      "count": 768.0,
+      "mean": 3.845,
+      "std": 3.37,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 3.0,
+      "75%": 6.0,
+      "max": 17.0
+    },
+    "Glucose": {
+      "count": 768.0,
+      "mean": 120.895,
+      "std": 31.973,
+      "min": 0.0,
+      "25%": 99.0,
+      "50%": 117.0,
+      "75%": 140.25,
+      "max": 199.0
+    },
+    "BloodPressure": {
+      "count": 768.0,
+      "mean": 69.105,
+      "std": 19.356,
+      "min": 0.0,
+      "25%": 62.0,
+      "50%": 72.0,
+      "75%": 80.0,
+      "max": 122.0
+    },
+    "SkinThickness": {
+      "count": 768.0,
+      "mean": 20.536,
+      "std": 15.952,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 23.0,
+      "75%": 32.0,
+      "max": 99.0
+    },
+    "Insulin": {
+      "count": 768.0,
+      "mean": 79.799,
+      "std": 115.244,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 30.5,
+      "75%": 127.25,
+      "max": 846.0
+    },
+    "BMI": {
+      "count": 768.0,
+      "mean": 31.993,
+      "std": 7.884,
+      "min": 0.0,
+      "25%": 27.3,
+      "50%": 32.0,
+      "75%": 36.6,
+      "max": 67.1
+    },
+    "DiabetesPedigreeFunction": {
+      "count": 768.0,
+      "mean": 0.472,
+      "std": 0.331,
+      "min": 0.078,
+      "25%": 0.244,
+      "50%": 0.372,
+      "75%": 0.626,
+      "max": 2.42
+    },
+    "Age": {
+      "count": 768.0,
+      "mean": 33.241,
+      "std": 11.76,
+      "min": 21.0,
+      "25%": 24.0,
+      "50%": 29.0,
+      "75%": 41.0,
+      "max": 81.0
+    }
+  }
+}

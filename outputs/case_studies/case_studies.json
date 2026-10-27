@@ -1,0 +1,1560 @@
+[
+  {
+    "case_id": 1,
+    "title": "High-confidence diabetes-positive prediction",
+    "rule": "Highest P(positive) among patients with P >= 0.85",
+    "available": true,
+    "patient_id": 245,
+    "selection_note": "P(positive) = 0.934",
+    "patient": "PIMA-0245",
+    "raw_values": {
+      "Pregnancies": 9.0,
+      "Glucose": 184.0,
+      "BloodPressure": 85.0,
+      "SkinThickness": 15.0,
+      "Insulin": 0.0,
+      "BMI": 30.0,
+      "DiabetesPedigreeFunction": 1.213,
+      "Age": 49.0
+    },
+    "model_input_values": {
+      "Pregnancies": 9.0,
+      "Glucose": 184.0,
+      "BloodPressure": 85.0,
+      "SkinThickness": 15.0,
+      "Insulin": 125.0,
+      "BMI": 30.0,
+      "DiabetesPedigreeFunction": 1.213,
+      "Age": 49.0
+    },
+    "imputed": {
+      "Pregnancies": false,
+      "Glucose": false,
+      "BloodPressure": false,
+      "SkinThickness": false,
+      "Insulin": true,
+      "BMI": false,
+      "DiabetesPedigreeFunction": false,
+      "Age": false
+    },
+    "y_true": 1,
+    "y_pred": 1,
+    "prob_positive": 0.9337278008460999,
+    "shap_base_value_logodds": -0.6224684119224548,
+    "shap_margin_logodds": 2.6454155445098877,
+    "shap_additivity_error": 7.869675755500793e-08,
+    "metrics": {
+      "confidence": 0.9337278008460999,
+      "confidence_band": "high-confidence positive",
+      "lime_r2": 0.591335804680299,
+      "lime_local_pred": 0.8697735621525234,
+      "lime_fidelity_gap": 0.06395423869357642,
+      "top1_match": true,
+      "top3_overlap": 1.0,
+      "top5_overlap": 0.8,
+      "jaccard_top3": 1.0,
+      "jaccard_top5": 0.6666666666666666,
+      "rank_spearman": 0.9285714285714287,
+      "sign_agreement": 1.0,
+      "n_direction_disagreements": 0,
+      "direction_disagreement_features": "",
+      "stability_jaccard_top3": 1.0,
+      "stability_spearman": 0.9407407407407407,
+      "sign_consistency": 1.0,
+      "sign_flip_features": "",
+      "material_sign_flip_features": "",
+      "r2_mean": 0.5852335751657974,
+      "r2_std": 0.006989188193023537
+    },
+    "lime_table": [
+      {
+        "feature": "Glucose",
+        "lime_rule": "Glucose > 140.00",
+        "lime_weight": 0.4401258796234131,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Age",
+        "lime_rule": "Age > 41.00",
+        "lime_weight": 0.09227354376354138,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "DiabetesPedigreeFunction",
+        "lime_rule": "DiabetesPedigreeFunction > 0.64",
+        "lime_weight": 0.08478401393673342,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Pregnancies",
+        "lime_rule": "Pregnancies > 6.00",
+        "lime_weight": 0.0677367656839297,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Insulin",
+        "lime_rule": "120.00 < Insulin <= 125.00",
+        "lime_weight": 0.04472805239502428,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "SkinThickness",
+        "lime_rule": "SkinThickness <= 25.00",
+        "lime_weight": -0.021257740325220986,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "BMI",
+        "lime_rule": "27.62 < BMI <= 32.40",
+        "lime_weight": 0.014682385914333662,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "BloodPressure",
+        "lime_rule": "BloodPressure > 80.00",
+        "lime_weight": 0.0022173027136624906,
+        "direction": "toward positive"
+      }
+    ],
+    "shap_table": [
+      {
+        "feature": "Glucose",
+        "model_input_value": 184.0,
+        "imputed": false,
+        "shap_logodds": 1.7988719940185547,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Age",
+        "model_input_value": 49.0,
+        "imputed": false,
+        "shap_logodds": 0.4822310507297516,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "DiabetesPedigreeFunction",
+        "model_input_value": 1.213,
+        "imputed": false,
+        "shap_logodds": 0.3933887183666229,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Pregnancies",
+        "model_input_value": 9.0,
+        "imputed": false,
+        "shap_logodds": 0.3484119474887848,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "BMI",
+        "model_input_value": 30.0,
+        "imputed": false,
+        "shap_logodds": 0.16786067187786102,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Insulin",
+        "model_input_value": 125.0,
+        "imputed": true,
+        "shap_logodds": 0.11584549397230148,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "SkinThickness",
+        "model_input_value": 15.0,
+        "imputed": false,
+        "shap_logodds": -0.044062621891498566,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "BloodPressure",
+        "model_input_value": 85.0,
+        "imputed": false,
+        "shap_logodds": 0.005336623173207045,
+        "direction": "toward positive"
+      }
+    ],
+    "stability_weights": [
+      {
+        "seed": 0,
+        "Pregnancies": 0.05633505406577926,
+        "Glucose": 0.4382295849429644,
+        "BloodPressure": -0.0010260748936791063,
+        "SkinThickness": -0.016644706199139297,
+        "Insulin": 0.05469626575340395,
+        "BMI": 0.011979421354281594,
+        "DiabetesPedigreeFunction": 0.08241179224064886,
+        "Age": 0.09098614691067898
+      },
+      {
+        "seed": 1,
+        "Pregnancies": 0.06672540049651708,
+        "Glucose": 0.43635455875138435,
+        "BloodPressure": -0.016602263534195735,
+        "SkinThickness": -0.01578460909993791,
+        "Insulin": 0.057960299736730676,
+        "BMI": 0.010541438897675033,
+        "DiabetesPedigreeFunction": 0.07045755390314211,
+        "Age": 0.09170147510792943
+      },
+      {
+        "seed": 2,
+        "Pregnancies": 0.06538317337172905,
+        "Glucose": 0.43605608922842937,
+        "BloodPressure": -0.0026464537947058016,
+        "SkinThickness": -0.017510865705701817,
+        "Insulin": 0.04655302937534111,
+        "BMI": 0.012493490309689196,
+        "DiabetesPedigreeFunction": 0.08020300426949316,
+        "Age": 0.0937942007796912
+      },
+      {
+        "seed": 3,
+        "Pregnancies": 0.04885646252071587,
+        "Glucose": 0.43471965142412144,
+        "BloodPressure": -0.011291346979173193,
+        "SkinThickness": -0.014014012582345657,
+        "Insulin": 0.04919356653612149,
+        "BMI": 0.023437134463258402,
+        "DiabetesPedigreeFunction": 0.07848563388390269,
+        "Age": 0.0907353595955357
+      },
+      {
+        "seed": 4,
+        "Pregnancies": 0.06277884440114669,
+        "Glucose": 0.43035184465222764,
+        "BloodPressure": -0.004373787465925194,
+        "SkinThickness": -0.01434780634385292,
+        "Insulin": 0.058212503233989535,
+        "BMI": 0.011967041613799773,
+        "DiabetesPedigreeFunction": 0.08152380837211283,
+        "Age": 0.08485529048296939
+      },
+      {
+        "seed": 5,
+        "Pregnancies": 0.06346810027562866,
+        "Glucose": 0.43801910954436896,
+        "BloodPressure": -0.020076147741264566,
+        "SkinThickness": -0.009758185082147017,
+        "Insulin": 0.05216500903956389,
+        "BMI": 0.01497394671572621,
+        "DiabetesPedigreeFunction": 0.07999881813602427,
+        "Age": 0.08549761905816607
+      },
+      {
+        "seed": 6,
+        "Pregnancies": 0.05416788583470947,
+        "Glucose": 0.4259297505812762,
+        "BloodPressure": -0.007741610162307394,
+        "SkinThickness": -0.017312251483916744,
+        "Insulin": 0.054229724947692015,
+        "BMI": 0.008161191853548218,
+        "DiabetesPedigreeFunction": 0.08763824439063723,
+        "Age": 0.0915709009215498
+      },
+      {
+        "seed": 7,
+        "Pregnancies": 0.06425678133315585,
+        "Glucose": 0.4257619617050564,
+        "BloodPressure": -0.014567717386103924,
+        "SkinThickness": -0.011539423001669963,
+        "Insulin": 0.042357985709642644,
+        "BMI": 0.021843475691740957,
+        "DiabetesPedigreeFunction": 0.09410823466766546,
+        "Age": 0.08930642682707489
+      },
+      {
+        "seed": 8,
+        "Pregnancies": 0.06549872758954678,
+        "Glucose": 0.4340551484559446,
+        "BloodPressure": -0.00809491859138462,
+        "SkinThickness": -0.011976077149429706,
+        "Insulin": 0.054626385171081156,
+        "BMI": 0.005982268587975281,
+        "DiabetesPedigreeFunction": 0.08751844198091056,
+        "Age": 0.08799330401209192
+      },
+      {
+        "seed": 9,
+        "Pregnancies": 0.07074443340127148,
+        "Glucose": 0.43138905617441103,
+        "BloodPressure": -0.001084440497587121,
+        "SkinThickness": -0.014363333310969237,
+        "Insulin": 0.05421271577790475,
+        "BMI": 0.01948437210759106,
+        "DiabetesPedigreeFunction": 0.08129291265795464,
+        "Age": 0.08698780787979549
+      }
+    ],
+    "neighborhood": {
+      "n_perturbations": 5000,
+      "mean_prob": 0.32921963930130005,
+      "std_prob": 0.26280227303504944,
+      "share_predicted_positive": 0.259
+    },
+    "interpretation": [
+      "XGBoost score P(positive) = 0.934 (uncalibrated) -> predicted diabetes-positive; recorded outcome diabetes-positive (correct).",
+      "Largest SHAP contribution: Glucose (+1.799 log-odds, toward positive); largest LIME weight: Glucose (+0.440, rule 'Glucose > 140.00').",
+      "Agreement: top-3 overlap 1.00, top-5 overlap 0.80, top-3 Jaccard 1.00, Spearman rank rho 0.93, sign agreement 1.00.",
+      "No material directional disagreement between LIME and SHAP for this patient.",
+      "LIME surrogate weighted R\u00b2 = 0.591 (moderate); surrogate-vs-model gap = 0.064.",
+      "Across 10 LIME seeds: mean top-3 Jaccard 1.00, mean rank rho 0.94; material sign flips (|w| >= 0.01 on both sides): none; any sign change incl. near-zero weights: none.",
+      "1 of this patient's values were zero placeholders replaced by training medians; attributions to those features describe the median, not a measurement."
+    ],
+    "figures": {
+      "lime": "outputs/case_studies/case1_lime.png",
+      "shap_waterfall": "outputs/case_studies/case1_shap_waterfall.png",
+      "shap_force": "outputs/case_studies/case1_shap_force.png",
+      "side_by_side": "outputs/case_studies/case1_side_by_side.png",
+      "rank_slope": "outputs/case_studies/case1_rank_slope.png",
+      "stability": "outputs/case_studies/case1_stability.png",
+      "neighborhood": "outputs/case_studies/case1_neighborhood.png"
+    }
+  },
+  {
+    "case_id": 2,
+    "title": "High-confidence diabetes-negative prediction",
+    "rule": "Lowest P(positive) among patients with P <= 0.15",
+    "available": true,
+    "patient_id": 32,
+    "selection_note": "P(positive) = 0.011",
+    "patient": "PIMA-0032",
+    "raw_values": {
+      "Pregnancies": 3.0,
+      "Glucose": 88.0,
+      "BloodPressure": 58.0,
+      "SkinThickness": 11.0,
+      "Insulin": 54.0,
+      "BMI": 24.8,
+      "DiabetesPedigreeFunction": 0.267,
+      "Age": 22.0
+    },
+    "model_input_values": {
+      "Pregnancies": 3.0,
+      "Glucose": 88.0,
+      "BloodPressure": 58.0,
+      "SkinThickness": 11.0,
+      "Insulin": 54.0,
+      "BMI": 24.8,
+      "DiabetesPedigreeFunction": 0.267,
+      "Age": 22.0
+    },
+    "imputed": {
+      "Pregnancies": false,
+      "Glucose": false,
+      "BloodPressure": false,
+      "SkinThickness": false,
+      "Insulin": false,
+      "BMI": false,
+      "DiabetesPedigreeFunction": false,
+      "Age": false
+    },
+    "y_true": 0,
+    "y_pred": 0,
+    "prob_positive": 0.01072174683213234,
+    "shap_base_value_logodds": -0.6224684119224548,
+    "shap_margin_logodds": -4.5247015953063965,
+    "shap_additivity_error": 1.4156103134155273e-06,
+    "metrics": {
+      "confidence": 0.9892782531678677,
+      "confidence_band": "high-confidence negative",
+      "lime_r2": 0.3910911646211497,
+      "lime_local_pred": -0.2016645000961258,
+      "lime_fidelity_gap": 0.21238624692825814,
+      "top1_match": true,
+      "top3_overlap": 0.6666666666666666,
+      "top5_overlap": 0.8,
+      "jaccard_top3": 0.5,
+      "jaccard_top5": 0.6666666666666666,
+      "rank_spearman": 0.8333333333333335,
+      "sign_agreement": 1.0,
+      "n_direction_disagreements": 0,
+      "direction_disagreement_features": "",
+      "stability_jaccard_top3": 0.7333333333333333,
+      "stability_spearman": 0.9126984126984128,
+      "sign_consistency": 1.0,
+      "sign_flip_features": "",
+      "material_sign_flip_features": "",
+      "r2_mean": 0.3865043401801577,
+      "r2_std": 0.005126763794473674
+    },
+    "lime_table": [
+      {
+        "feature": "Glucose",
+        "lime_rule": "Glucose <= 99.00",
+        "lime_weight": -0.2812819088907301,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "BMI",
+        "lime_rule": "BMI <= 27.62",
+        "lime_weight": -0.20503842336786096,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "Insulin",
+        "lime_rule": "Insulin <= 120.00",
+        "lime_weight": -0.08700704450908531,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "Age",
+        "lime_rule": "Age <= 24.00",
+        "lime_weight": -0.07768745362566477,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "Pregnancies",
+        "lime_rule": "1.00 < Pregnancies <= 3.00",
+        "lime_weight": -0.02593269908219722,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "DiabetesPedigreeFunction",
+        "lime_rule": "0.24 < DiabetesPedigreeFunction <= 0.38",
+        "lime_weight": -0.021643476045996576,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "SkinThickness",
+        "lime_rule": "SkinThickness <= 25.00",
+        "lime_weight": -0.013925098046808995,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "BloodPressure",
+        "lime_rule": "BloodPressure <= 64.00",
+        "lime_weight": -0.003749869090654754,
+        "direction": "toward negative"
+      }
+    ],
+    "shap_table": [
+      {
+        "feature": "Glucose",
+        "model_input_value": 88.0,
+        "imputed": false,
+        "shap_logodds": -1.506260871887207,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "BMI",
+        "model_input_value": 24.8,
+        "imputed": false,
+        "shap_logodds": -1.0002824068069458,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "Age",
+        "model_input_value": 22.0,
+        "imputed": false,
+        "shap_logodds": -0.4290679395198822,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "Insulin",
+        "model_input_value": 54.0,
+        "imputed": false,
+        "shap_logodds": -0.404599130153656,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "DiabetesPedigreeFunction",
+        "model_input_value": 0.267,
+        "imputed": false,
+        "shap_logodds": -0.21912868320941925,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "SkinThickness",
+        "model_input_value": 11.0,
+        "imputed": false,
+        "shap_logodds": -0.1505010426044464,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "BloodPressure",
+        "model_input_value": 58.0,
+        "imputed": false,
+        "shap_logodds": -0.10909507423639297,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "Pregnancies",
+        "model_input_value": 3.0,
+        "imputed": false,
+        "shap_logodds": -0.08329945057630539,
+        "direction": "toward negative"
+      }
+    ],
+    "stability_weights": [
+      {
+        "seed": 0,
+        "Pregnancies": -0.013026672244473651,
+        "Glucose": -0.27981705885612707,
+        "BloodPressure": -0.017449101692633768,
+        "SkinThickness": -0.027317675164567734,
+        "Insulin": -0.08620167282643924,
+        "BMI": -0.20090924354534007,
+        "DiabetesPedigreeFunction": -0.028921827943958794,
+        "Age": -0.08622120574050886
+      },
+      {
+        "seed": 1,
+        "Pregnancies": -0.025068704033452842,
+        "Glucose": -0.27932466100810216,
+        "BloodPressure": -0.018292883426139012,
+        "SkinThickness": -0.016010725622838843,
+        "Insulin": -0.08364318187214738,
+        "BMI": -0.19589040456680248,
+        "DiabetesPedigreeFunction": -0.019399913274647667,
+        "Age": -0.07487413462152168
+      },
+      {
+        "seed": 2,
+        "Pregnancies": -0.02626751854705949,
+        "Glucose": -0.2766224785095303,
+        "BloodPressure": -0.014152678140012413,
+        "SkinThickness": -0.013150453742104991,
+        "Insulin": -0.08587277209798369,
+        "BMI": -0.20219633077900964,
+        "DiabetesPedigreeFunction": -0.02209743044342319,
+        "Age": -0.0784565957222963
+      },
+      {
+        "seed": 3,
+        "Pregnancies": -0.01875365624947114,
+        "Glucose": -0.27472837882241324,
+        "BloodPressure": -0.008873903458809966,
+        "SkinThickness": -0.007007639884347532,
+        "Insulin": -0.07254606797952581,
+        "BMI": -0.19943247256486704,
+        "DiabetesPedigreeFunction": -0.024200592709930763,
+        "Age": -0.08614580928906813
+      },
+      {
+        "seed": 4,
+        "Pregnancies": -0.01076302171363348,
+        "Glucose": -0.28335087052689495,
+        "BloodPressure": -0.019050858031148445,
+        "SkinThickness": -0.014791647517176258,
+        "Insulin": -0.0815227316438086,
+        "BMI": -0.19207740811422258,
+        "DiabetesPedigreeFunction": -0.033325708527091186,
+        "Age": -0.06952880199988218
+      },
+      {
+        "seed": 5,
+        "Pregnancies": -0.00874423844722333,
+        "Glucose": -0.27497987457270096,
+        "BloodPressure": -0.0055319123080801,
+        "SkinThickness": -0.02198689083482291,
+        "Insulin": -0.07755620133976279,
+        "BMI": -0.1863034560041044,
+        "DiabetesPedigreeFunction": -0.014344461566147118,
+        "Age": -0.07790613690425034
+      },
+      {
+        "seed": 6,
+        "Pregnancies": -0.003300620577345137,
+        "Glucose": -0.277469099286844,
+        "BloodPressure": -0.00497489441019175,
+        "SkinThickness": -0.014416065428934767,
+        "Insulin": -0.07801097494792947,
+        "BMI": -0.20581830757908864,
+        "DiabetesPedigreeFunction": -0.021001563863111347,
+        "Age": -0.07565501081265774
+      },
+      {
+        "seed": 7,
+        "Pregnancies": -0.018183131789425464,
+        "Glucose": -0.279766581107089,
+        "BloodPressure": -0.006216009405589842,
+        "SkinThickness": -0.019144796290521352,
+        "Insulin": -0.08566825926594492,
+        "BMI": -0.19695671883016322,
+        "DiabetesPedigreeFunction": -0.03754446073547444,
+        "Age": -0.083377732550038
+      },
+      {
+        "seed": 8,
+        "Pregnancies": -0.020958809803076704,
+        "Glucose": -0.27719401184983355,
+        "BloodPressure": -0.0084846735784475,
+        "SkinThickness": -0.011082133635850765,
+        "Insulin": -0.08927055625587112,
+        "BMI": -0.19236218512452258,
+        "DiabetesPedigreeFunction": -0.02113466848127824,
+        "Age": -0.07456627802019185
+      },
+      {
+        "seed": 9,
+        "Pregnancies": -0.021241071004767766,
+        "Glucose": -0.28554832114807327,
+        "BloodPressure": -0.015702926082598528,
+        "SkinThickness": -0.019577878018032742,
+        "Insulin": -0.06501880095069663,
+        "BMI": -0.19832408055169717,
+        "DiabetesPedigreeFunction": -0.027176888136190076,
+        "Age": -0.06963112247760718
+      }
+    ],
+    "neighborhood": {
+      "n_perturbations": 5000,
+      "mean_prob": 0.3353068232536316,
+      "std_prob": 0.2633029520511627,
+      "share_predicted_positive": 0.2644
+    },
+    "interpretation": [
+      "XGBoost score P(positive) = 0.011 (uncalibrated) -> predicted diabetes-negative; recorded outcome diabetes-negative (correct).",
+      "Largest SHAP contribution: Glucose (-1.506 log-odds, toward negative); largest LIME weight: Glucose (-0.281, rule 'Glucose <= 99.00').",
+      "Agreement: top-3 overlap 0.67, top-5 overlap 0.80, top-3 Jaccard 0.50, Spearman rank rho 0.83, sign agreement 1.00.",
+      "No material directional disagreement between LIME and SHAP for this patient.",
+      "LIME surrogate weighted R\u00b2 = 0.391 (moderate); surrogate-vs-model gap = 0.212.",
+      "Across 10 LIME seeds: mean top-3 Jaccard 0.73, mean rank rho 0.91; material sign flips (|w| >= 0.01 on both sides): none; any sign change incl. near-zero weights: none."
+    ],
+    "figures": {
+      "lime": "outputs/case_studies/case2_lime.png",
+      "shap_waterfall": "outputs/case_studies/case2_shap_waterfall.png",
+      "shap_force": "outputs/case_studies/case2_shap_force.png",
+      "side_by_side": "outputs/case_studies/case2_side_by_side.png",
+      "rank_slope": "outputs/case_studies/case2_rank_slope.png",
+      "stability": "outputs/case_studies/case2_stability.png",
+      "neighborhood": "outputs/case_studies/case2_neighborhood.png"
+    }
+  },
+  {
+    "case_id": 3,
+    "title": "Borderline prediction",
+    "rule": "P(positive) closest to the 0.5 threshold within [0.4, 0.6]",
+    "available": true,
+    "patient_id": 78,
+    "selection_note": "P(positive) = 0.508, |P - 0.5| = 0.008",
+    "patient": "PIMA-0078",
+    "raw_values": {
+      "Pregnancies": 0.0,
+      "Glucose": 131.0,
+      "BloodPressure": 0.0,
+      "SkinThickness": 0.0,
+      "Insulin": 0.0,
+      "BMI": 43.2,
+      "DiabetesPedigreeFunction": 0.27,
+      "Age": 26.0
+    },
+    "model_input_values": {
+      "Pregnancies": 0.0,
+      "Glucose": 131.0,
+      "BloodPressure": 72.0,
+      "SkinThickness": 29.0,
+      "Insulin": 125.0,
+      "BMI": 43.2,
+      "DiabetesPedigreeFunction": 0.27,
+      "Age": 26.0
+    },
+    "imputed": {
+      "Pregnancies": false,
+      "Glucose": false,
+      "BloodPressure": true,
+      "SkinThickness": true,
+      "Insulin": true,
+      "BMI": false,
+      "DiabetesPedigreeFunction": false,
+      "Age": false
+    },
+    "y_true": 1,
+    "y_pred": 1,
+    "prob_positive": 0.5082407593727112,
+    "shap_base_value_logodds": -0.6224684119224548,
+    "shap_margin_logodds": 0.03296596556901932,
+    "shap_additivity_error": 9.96515154838562e-08,
+    "metrics": {
+      "confidence": 0.5082407593727112,
+      "confidence_band": "borderline",
+      "lime_r2": 0.0742934414185773,
+      "lime_local_pred": 0.3865115765346944,
+      "lime_fidelity_gap": 0.12172918283801676,
+      "top1_match": true,
+      "top3_overlap": 0.6666666666666666,
+      "top5_overlap": 1.0,
+      "jaccard_top3": 0.5,
+      "jaccard_top5": 1.0,
+      "rank_spearman": 0.7380952380952381,
+      "sign_agreement": 0.75,
+      "n_direction_disagreements": 1,
+      "direction_disagreement_features": "Glucose",
+      "stability_jaccard_top3": 0.9,
+      "stability_spearman": 0.8566137566137567,
+      "sign_consistency": 0.75,
+      "sign_flip_features": "BloodPressure;SkinThickness",
+      "material_sign_flip_features": "",
+      "r2_mean": 0.08040215670259274,
+      "r2_std": 0.0049361685964186735
+    },
+    "lime_table": [
+      {
+        "feature": "BMI",
+        "lime_rule": "BMI > 36.50",
+        "lime_weight": 0.1351796739611004,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Insulin",
+        "lime_rule": "120.00 < Insulin <= 125.00",
+        "lime_weight": 0.059955109775814766,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Age",
+        "lime_rule": "24.00 < Age <= 29.00",
+        "lime_weight": -0.05186580210914607,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "DiabetesPedigreeFunction",
+        "lime_rule": "0.24 < DiabetesPedigreeFunction <= 0.38",
+        "lime_weight": -0.02461824123618939,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "Glucose",
+        "lime_rule": "117.00 < Glucose <= 140.00",
+        "lime_weight": -0.021983598297618943,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "SkinThickness",
+        "lime_rule": "25.00 < SkinThickness <= 29.00",
+        "lime_weight": -0.014018877913446456,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "BloodPressure",
+        "lime_rule": "64.00 < BloodPressure <= 72.00",
+        "lime_weight": 0.010626530662761008,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Pregnancies",
+        "lime_rule": "Pregnancies <= 1.00",
+        "lime_weight": -0.007727071206172924,
+        "direction": "toward negative"
+      }
+    ],
+    "shap_table": [
+      {
+        "feature": "BMI",
+        "model_input_value": 43.2,
+        "imputed": false,
+        "shap_logodds": 0.7765485644340515,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Age",
+        "model_input_value": 26.0,
+        "imputed": false,
+        "shap_logodds": -0.2874249219894409,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "Glucose",
+        "model_input_value": 131.0,
+        "imputed": false,
+        "shap_logodds": 0.2501547336578369,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "DiabetesPedigreeFunction",
+        "model_input_value": 0.27,
+        "imputed": false,
+        "shap_logodds": -0.19444382190704346,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "Insulin",
+        "model_input_value": 125.0,
+        "imputed": true,
+        "shap_logodds": 0.13979138433933258,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Pregnancies",
+        "model_input_value": 0.0,
+        "imputed": false,
+        "shap_logodds": -0.09345299750566483,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "BloodPressure",
+        "model_input_value": 72.0,
+        "imputed": true,
+        "shap_logodds": 0.05891234055161476,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "SkinThickness",
+        "model_input_value": 29.0,
+        "imputed": true,
+        "shap_logodds": 0.0053489962592720985,
+        "direction": "toward positive"
+      }
+    ],
+    "stability_weights": [
+      {
+        "seed": 0,
+        "Pregnancies": -0.014747974324861565,
+        "Glucose": -0.02748255390376204,
+        "BloodPressure": 0.005194349992813066,
+        "SkinThickness": -0.01731664331220405,
+        "Insulin": 0.05596670736876979,
+        "BMI": 0.14344674748950315,
+        "DiabetesPedigreeFunction": -0.02549217423711281,
+        "Age": -0.05126508537998323
+      },
+      {
+        "seed": 1,
+        "Pregnancies": -0.01919143051728843,
+        "Glucose": -0.010990813665356633,
+        "BloodPressure": -0.0067403235712037895,
+        "SkinThickness": -0.007365294787834442,
+        "Insulin": 0.06460950485313628,
+        "BMI": 0.14152125778044683,
+        "DiabetesPedigreeFunction": -0.031830574606151574,
+        "Age": -0.04219118083698304
+      },
+      {
+        "seed": 2,
+        "Pregnancies": -0.017552689126630897,
+        "Glucose": -0.01770557358153123,
+        "BloodPressure": -0.0065486748150956255,
+        "SkinThickness": -0.01106511583449964,
+        "Insulin": 0.05552386670272899,
+        "BMI": 0.1436240906696033,
+        "DiabetesPedigreeFunction": -0.03489857715037702,
+        "Age": -0.048214377660260925
+      },
+      {
+        "seed": 3,
+        "Pregnancies": -0.022705288043710897,
+        "Glucose": -0.00958800019192238,
+        "BloodPressure": -0.0028301131740816375,
+        "SkinThickness": -0.0013348114483957595,
+        "Insulin": 0.056881133803266586,
+        "BMI": 0.13016895103764287,
+        "DiabetesPedigreeFunction": -0.02235151558076491,
+        "Age": -0.04634995980200695
+      },
+      {
+        "seed": 4,
+        "Pregnancies": -0.0158400690814777,
+        "Glucose": -0.0211004358398919,
+        "BloodPressure": 0.005573943463462838,
+        "SkinThickness": -0.0036582522717462226,
+        "Insulin": 0.05362164391482533,
+        "BMI": 0.14709028194488866,
+        "DiabetesPedigreeFunction": -0.028591059656052676,
+        "Age": -0.06072815935934401
+      },
+      {
+        "seed": 5,
+        "Pregnancies": -0.020716756133112673,
+        "Glucose": -0.007315898470423908,
+        "BloodPressure": 0.012351657596418856,
+        "SkinThickness": 0.002763783331489614,
+        "Insulin": 0.048750095280927476,
+        "BMI": 0.1537389229496685,
+        "DiabetesPedigreeFunction": -0.03234956904979835,
+        "Age": -0.05764940503192685
+      },
+      {
+        "seed": 6,
+        "Pregnancies": -0.009524337855899224,
+        "Glucose": -0.003272298055102543,
+        "BloodPressure": 0.007906281964029762,
+        "SkinThickness": -0.018168371110918517,
+        "Insulin": 0.052917152662516106,
+        "BMI": 0.13559083039928582,
+        "DiabetesPedigreeFunction": -0.019375393457356775,
+        "Age": -0.0388641746452499
+      },
+      {
+        "seed": 7,
+        "Pregnancies": -0.005433440240150168,
+        "Glucose": -0.02322523472004162,
+        "BloodPressure": 0.01968271324375455,
+        "SkinThickness": -0.008069987469857723,
+        "Insulin": 0.047709675563087445,
+        "BMI": 0.14278073348521922,
+        "DiabetesPedigreeFunction": -0.03569345932770588,
+        "Age": -0.04296924574970401
+      },
+      {
+        "seed": 8,
+        "Pregnancies": -0.011124114343823712,
+        "Glucose": -0.014135520398098263,
+        "BloodPressure": 0.011213423396402184,
+        "SkinThickness": -0.01073428600546734,
+        "Insulin": 0.05265709641980949,
+        "BMI": 0.14497211467290066,
+        "DiabetesPedigreeFunction": -0.04081138571054331,
+        "Age": -0.03342114064906979
+      },
+      {
+        "seed": 9,
+        "Pregnancies": -0.02309217484813623,
+        "Glucose": -0.022756522075499344,
+        "BloodPressure": -0.008879946896366168,
+        "SkinThickness": 0.00388263895557216,
+        "Insulin": 0.05175301074970523,
+        "BMI": 0.1439812545583056,
+        "DiabetesPedigreeFunction": -0.02033511787120723,
+        "Age": -0.04901559352520207
+      }
+    ],
+    "neighborhood": {
+      "n_perturbations": 5000,
+      "mean_prob": 0.3351680040359497,
+      "std_prob": 0.2651922404766083,
+      "share_predicted_positive": 0.2698
+    },
+    "interpretation": [
+      "XGBoost score P(positive) = 0.508 (uncalibrated) -> predicted diabetes-positive; recorded outcome diabetes-positive (correct).",
+      "Largest SHAP contribution: BMI (+0.777 log-odds, toward positive); largest LIME weight: BMI (+0.135, rule 'BMI > 36.50').",
+      "Agreement: top-3 overlap 0.67, top-5 overlap 1.00, top-3 Jaccard 0.50, Spearman rank rho 0.74, sign agreement 0.75.",
+      "Opposite directions for Glucose. LIME's sign reflects the patient's quartile bin versus other bins in the perturbed neighbourhood; SHAP's sign reflects the value versus the tree-path expectation. A sign difference shows the two baselines differ; it does not establish which method is 'right'.",
+      "LIME surrogate weighted R\u00b2 = 0.074 (low - the linear surrogate captures little of the model's local behaviour); surrogate-vs-model gap = 0.122.",
+      "Across 10 LIME seeds: mean top-3 Jaccard 0.90, mean rank rho 0.86; material sign flips (|w| >= 0.01 on both sides): none; any sign change incl. near-zero weights: BloodPressure;SkinThickness.",
+      "3 of this patient's values were zero placeholders replaced by training medians; attributions to those features describe the median, not a measurement."
+    ],
+    "figures": {
+      "lime": "outputs/case_studies/case3_lime.png",
+      "shap_waterfall": "outputs/case_studies/case3_shap_waterfall.png",
+      "shap_force": "outputs/case_studies/case3_shap_force.png",
+      "side_by_side": "outputs/case_studies/case3_side_by_side.png",
+      "rank_slope": "outputs/case_studies/case3_rank_slope.png",
+      "stability": "outputs/case_studies/case3_stability.png",
+      "neighborhood": "outputs/case_studies/case3_neighborhood.png"
+    }
+  },
+  {
+    "case_id": 4,
+    "title": "LIME-SHAP feature-ranking disagreement",
+    "rule": "Lowest LIME-SHAP Spearman rank correlation among patients whose top-3 sets share at most 2 features (Jaccard <= 0.5); ties broken by lower top-3 Jaccard",
+    "available": true,
+    "patient_id": 351,
+    "selection_note": "Spearman rho = -0.238, top-3 Jaccard = 0.00 (LIME top-3: Insulin;Age;Pregnancies; SHAP top-3: Glucose;DiabetesPedigreeFunction;BMI)",
+    "patient": "PIMA-0351",
+    "raw_values": {
+      "Pregnancies": 4.0,
+      "Glucose": 137.0,
+      "BloodPressure": 84.0,
+      "SkinThickness": 0.0,
+      "Insulin": 0.0,
+      "BMI": 31.2,
+      "DiabetesPedigreeFunction": 0.252,
+      "Age": 30.0
+    },
+    "model_input_values": {
+      "Pregnancies": 4.0,
+      "Glucose": 137.0,
+      "BloodPressure": 84.0,
+      "SkinThickness": 29.0,
+      "Insulin": 125.0,
+      "BMI": 31.2,
+      "DiabetesPedigreeFunction": 0.252,
+      "Age": 30.0
+    },
+    "imputed": {
+      "Pregnancies": false,
+      "Glucose": false,
+      "BloodPressure": false,
+      "SkinThickness": true,
+      "Insulin": true,
+      "BMI": false,
+      "DiabetesPedigreeFunction": false,
+      "Age": false
+    },
+    "y_true": 0,
+    "y_pred": 0,
+    "prob_positive": 0.4548151195049286,
+    "shap_base_value_logodds": -0.6224684119224548,
+    "shap_margin_logodds": -0.18123413622379303,
+    "shap_additivity_error": 9.220093488693237e-08,
+    "metrics": {
+      "confidence": 0.5451848804950714,
+      "confidence_band": "borderline",
+      "lime_r2": 0.029231477349480728,
+      "lime_local_pred": 0.31536491704030983,
+      "lime_fidelity_gap": 0.13945020246461876,
+      "top1_match": false,
+      "top3_overlap": 0.0,
+      "top5_overlap": 0.6,
+      "jaccard_top3": 0.0,
+      "jaccard_top5": 0.42857142857142855,
+      "rank_spearman": -0.2380952380952381,
+      "sign_agreement": 0.625,
+      "n_direction_disagreements": 1,
+      "direction_disagreement_features": "Glucose",
+      "stability_jaccard_top3": 0.9,
+      "stability_spearman": 0.7174603174603176,
+      "sign_consistency": 0.5,
+      "sign_flip_features": "Pregnancies;Glucose;BloodPressure;SkinThickness",
+      "material_sign_flip_features": "",
+      "r2_mean": 0.021805811544258834,
+      "r2_std": 0.005271609119961432
+    },
+    "lime_table": [
+      {
+        "feature": "Insulin",
+        "lime_rule": "120.00 < Insulin <= 125.00",
+        "lime_weight": 0.0635689140458947,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Age",
+        "lime_rule": "29.00 < Age <= 41.00",
+        "lime_weight": 0.045721059385971104,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Pregnancies",
+        "lime_rule": "3.00 < Pregnancies <= 6.00",
+        "lime_weight": -0.038319430370516855,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "SkinThickness",
+        "lime_rule": "25.00 < SkinThickness <= 29.00",
+        "lime_weight": -0.020869223878441468,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "DiabetesPedigreeFunction",
+        "lime_rule": "0.24 < DiabetesPedigreeFunction <= 0.38",
+        "lime_weight": -0.020430132141995547,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "Glucose",
+        "lime_rule": "117.00 < Glucose <= 140.00",
+        "lime_weight": -0.013398950291250735,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "BloodPressure",
+        "lime_rule": "BloodPressure > 80.00",
+        "lime_weight": -0.013113737751123766,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "BMI",
+        "lime_rule": "27.62 < BMI <= 32.40",
+        "lime_weight": -0.009454605747269333,
+        "direction": "toward negative"
+      }
+    ],
+    "shap_table": [
+      {
+        "feature": "Glucose",
+        "model_input_value": 137.0,
+        "imputed": false,
+        "shap_logodds": 0.42092347145080566,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "DiabetesPedigreeFunction",
+        "model_input_value": 0.252,
+        "imputed": false,
+        "shap_logodds": -0.23810139298439026,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "BMI",
+        "model_input_value": 31.2,
+        "imputed": false,
+        "shap_logodds": 0.21995805203914642,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Insulin",
+        "model_input_value": 125.0,
+        "imputed": true,
+        "shap_logodds": 0.1212540864944458,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Pregnancies",
+        "model_input_value": 4.0,
+        "imputed": false,
+        "shap_logodds": -0.09748981893062592,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "Age",
+        "model_input_value": 30.0,
+        "imputed": false,
+        "shap_logodds": 0.021287159994244576,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "BloodPressure",
+        "model_input_value": 84.0,
+        "imputed": false,
+        "shap_logodds": -0.009082534350454807,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "SkinThickness",
+        "model_input_value": 29.0,
+        "imputed": true,
+        "shap_logodds": 0.002485344186425209,
+        "direction": "toward positive"
+      }
+    ],
+    "stability_weights": [
+      {
+        "seed": 0,
+        "Pregnancies": 0.0008043036846010243,
+        "Glucose": -0.020816014338981035,
+        "BloodPressure": -0.004308219435815677,
+        "SkinThickness": -0.011875723702499591,
+        "Insulin": 0.04523994271588568,
+        "BMI": 0.016020167455677126,
+        "DiabetesPedigreeFunction": -0.03681539583057494,
+        "Age": 0.03316661514035409
+      },
+      {
+        "seed": 1,
+        "Pregnancies": -0.023640349418818665,
+        "Glucose": -0.01001104219863868,
+        "BloodPressure": 0.0008262103599388814,
+        "SkinThickness": -0.001149508934839015,
+        "Insulin": 0.05823157041166843,
+        "BMI": 0.015856096493828773,
+        "DiabetesPedigreeFunction": -0.04068656552460783,
+        "Age": 0.05842230847064692
+      },
+      {
+        "seed": 2,
+        "Pregnancies": -0.0231319457119479,
+        "Glucose": -0.007869899875291894,
+        "BloodPressure": 0.0166365067260283,
+        "SkinThickness": 0.0021419390898569338,
+        "Insulin": 0.0574407420031834,
+        "BMI": 0.02152592819212986,
+        "DiabetesPedigreeFunction": -0.013321583008775341,
+        "Age": 0.04559459043103277
+      },
+      {
+        "seed": 3,
+        "Pregnancies": -0.018623683213681515,
+        "Glucose": -0.01388891011244549,
+        "BloodPressure": -0.0005023437833322124,
+        "SkinThickness": -0.005602324681628557,
+        "Insulin": 0.03897856817576049,
+        "BMI": 0.0074465742433296985,
+        "DiabetesPedigreeFunction": -0.037288558347540114,
+        "Age": 0.03949032126100676
+      },
+      {
+        "seed": 4,
+        "Pregnancies": -0.008769578971859484,
+        "Glucose": -0.010419562483620025,
+        "BloodPressure": -0.004525660273138286,
+        "SkinThickness": -0.010232041514236997,
+        "Insulin": 0.0426191318103765,
+        "BMI": 0.010746196271028484,
+        "DiabetesPedigreeFunction": -0.03900566466948423,
+        "Age": 0.046001370588767646
+      },
+      {
+        "seed": 5,
+        "Pregnancies": -0.003877780397234618,
+        "Glucose": -0.01575048894948685,
+        "BloodPressure": -0.00601330059596762,
+        "SkinThickness": -0.02260204204658802,
+        "Insulin": 0.05253379922994947,
+        "BMI": 0.018430956757264288,
+        "DiabetesPedigreeFunction": -0.024431121970835797,
+        "Age": 0.04215138499027544
+      },
+      {
+        "seed": 6,
+        "Pregnancies": -0.012496050841858473,
+        "Glucose": -0.016255445046553248,
+        "BloodPressure": -0.009623042251594228,
+        "SkinThickness": -0.011392057809781135,
+        "Insulin": 0.04110882415913827,
+        "BMI": 0.007487554388791369,
+        "DiabetesPedigreeFunction": -0.02857478640807946,
+        "Age": 0.06076075154796176
+      },
+      {
+        "seed": 7,
+        "Pregnancies": -0.014852343278997567,
+        "Glucose": 0.0006042267318018936,
+        "BloodPressure": 0.004308686971413616,
+        "SkinThickness": -0.02050674846651304,
+        "Insulin": 0.053035836796883055,
+        "BMI": 0.0025418695595125786,
+        "DiabetesPedigreeFunction": -0.020561957928000744,
+        "Age": 0.043361429831168224
+      },
+      {
+        "seed": 8,
+        "Pregnancies": -0.011459244487027825,
+        "Glucose": -0.013620850002045827,
+        "BloodPressure": 0.004879191023986687,
+        "SkinThickness": -0.008430536955524698,
+        "Insulin": 0.041601558618074734,
+        "BMI": 0.0016029780236875026,
+        "DiabetesPedigreeFunction": -0.02991517585816089,
+        "Age": 0.05059659282950952
+      },
+      {
+        "seed": 9,
+        "Pregnancies": -0.019022840352575558,
+        "Glucose": -0.011009353740235695,
+        "BloodPressure": -0.00799493958528611,
+        "SkinThickness": -0.004520928886996353,
+        "Insulin": 0.06875946198700925,
+        "BMI": 0.01437066173519046,
+        "DiabetesPedigreeFunction": -0.04191737636649804,
+        "Age": 0.04823400902717579
+      }
+    ],
+    "neighborhood": {
+      "n_perturbations": 5000,
+      "mean_prob": 0.33375561237335205,
+      "std_prob": 0.26250141859054565,
+      "share_predicted_positive": 0.2708
+    },
+    "interpretation": [
+      "XGBoost score P(positive) = 0.455 (uncalibrated) -> predicted diabetes-negative; recorded outcome diabetes-negative (correct).",
+      "Largest SHAP contribution: Glucose (+0.421 log-odds, toward positive); largest LIME weight: Insulin (+0.064, rule '120.00 < Insulin <= 125.00').",
+      "Agreement: top-3 overlap 0.00, top-5 overlap 0.60, top-3 Jaccard 0.00, Spearman rank rho -0.24, sign agreement 0.62.",
+      "Opposite directions for Glucose. LIME's sign reflects the patient's quartile bin versus other bins in the perturbed neighbourhood; SHAP's sign reflects the value versus the tree-path expectation. A sign difference shows the two baselines differ; it does not establish which method is 'right'.",
+      "LIME surrogate weighted R\u00b2 = 0.029 (low - the linear surrogate captures little of the model's local behaviour); surrogate-vs-model gap = 0.139.",
+      "Across 10 LIME seeds: mean top-3 Jaccard 0.90, mean rank rho 0.72; material sign flips (|w| >= 0.01 on both sides): none; any sign change incl. near-zero weights: Pregnancies;Glucose;BloodPressure;SkinThickness.",
+      "2 of this patient's values were zero placeholders replaced by training medians; attributions to those features describe the median, not a measurement."
+    ],
+    "figures": {
+      "lime": "outputs/case_studies/case4_lime.png",
+      "shap_waterfall": "outputs/case_studies/case4_shap_waterfall.png",
+      "shap_force": "outputs/case_studies/case4_shap_force.png",
+      "side_by_side": "outputs/case_studies/case4_side_by_side.png",
+      "rank_slope": "outputs/case_studies/case4_rank_slope.png",
+      "stability": "outputs/case_studies/case4_stability.png",
+      "neighborhood": "outputs/case_studies/case4_neighborhood.png"
+    }
+  },
+  {
+    "case_id": 5,
+    "title": "LIME-SHAP directional disagreement",
+    "rule": "Most same-feature sign disagreements (both attributions above tolerance); ties broken by the SHAP magnitude of the disagreeing features",
+    "available": true,
+    "patient_id": 486,
+    "selection_note": "2 feature(s) with opposite signs: Glucose;Insulin",
+    "patient": "PIMA-0486",
+    "raw_values": {
+      "Pregnancies": 1.0,
+      "Glucose": 139.0,
+      "BloodPressure": 62.0,
+      "SkinThickness": 41.0,
+      "Insulin": 480.0,
+      "BMI": 40.7,
+      "DiabetesPedigreeFunction": 0.536,
+      "Age": 21.0
+    },
+    "model_input_values": {
+      "Pregnancies": 1.0,
+      "Glucose": 139.0,
+      "BloodPressure": 62.0,
+      "SkinThickness": 41.0,
+      "Insulin": 480.0,
+      "BMI": 40.7,
+      "DiabetesPedigreeFunction": 0.536,
+      "Age": 21.0
+    },
+    "imputed": {
+      "Pregnancies": false,
+      "Glucose": false,
+      "BloodPressure": false,
+      "SkinThickness": false,
+      "Insulin": false,
+      "BMI": false,
+      "DiabetesPedigreeFunction": false,
+      "Age": false
+    },
+    "y_true": 0,
+    "y_pred": 0,
+    "prob_positive": 0.45856431126594543,
+    "shap_base_value_logodds": -0.6224684119224548,
+    "shap_margin_logodds": -0.16612368822097778,
+    "shap_additivity_error": 2.123415470123291e-07,
+    "metrics": {
+      "confidence": 0.5414356887340546,
+      "confidence_band": "borderline",
+      "lime_r2": 0.08598831484320746,
+      "lime_local_pred": 0.3987648461559541,
+      "lime_fidelity_gap": 0.059799465109991345,
+      "top1_match": false,
+      "top3_overlap": 0.3333333333333333,
+      "top5_overlap": 0.6,
+      "jaccard_top3": 0.2,
+      "jaccard_top5": 0.42857142857142855,
+      "rank_spearman": 0.19047619047619052,
+      "sign_agreement": 0.625,
+      "n_direction_disagreements": 2,
+      "direction_disagreement_features": "Glucose;Insulin",
+      "stability_jaccard_top3": 0.5777777777777777,
+      "stability_spearman": 0.5968253968253969,
+      "sign_consistency": 0.75,
+      "sign_flip_features": "BloodPressure;Insulin",
+      "material_sign_flip_features": "",
+      "r2_mean": 0.0899102632068873,
+      "r2_std": 0.008590665729230697
+    },
+    "lime_table": [
+      {
+        "feature": "BMI",
+        "lime_rule": "BMI > 36.50",
+        "lime_weight": 0.13955259131898526,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Age",
+        "lime_rule": "Age <= 24.00",
+        "lime_weight": -0.08468607303891704,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "Insulin",
+        "lime_rule": "Insulin > 130.00",
+        "lime_weight": 0.032516631082937474,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "SkinThickness",
+        "lime_rule": "SkinThickness > 32.00",
+        "lime_weight": 0.016688646398341212,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Pregnancies",
+        "lime_rule": "Pregnancies <= 1.00",
+        "lime_weight": -0.016496137583187256,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "DiabetesPedigreeFunction",
+        "lime_rule": "0.38 < DiabetesPedigreeFunction <= 0.64",
+        "lime_weight": 0.014388282735986512,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Glucose",
+        "lime_rule": "117.00 < Glucose <= 140.00",
+        "lime_weight": -0.011171426020076454,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "BloodPressure",
+        "lime_rule": "BloodPressure <= 64.00",
+        "lime_weight": -0.00906482151429707,
+        "direction": "toward negative"
+      }
+    ],
+    "shap_table": [
+      {
+        "feature": "Glucose",
+        "model_input_value": 139.0,
+        "imputed": false,
+        "shap_logodds": 0.48289933800697327,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Age",
+        "model_input_value": 21.0,
+        "imputed": false,
+        "shap_logodds": -0.39404118061065674,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "DiabetesPedigreeFunction",
+        "model_input_value": 0.536,
+        "imputed": false,
+        "shap_logodds": 0.28448954224586487,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "BMI",
+        "model_input_value": 40.7,
+        "imputed": false,
+        "shap_logodds": 0.22456179559230804,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "Insulin",
+        "model_input_value": 480.0,
+        "imputed": false,
+        "shap_logodds": -0.18375295400619507,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "Pregnancies",
+        "model_input_value": 1.0,
+        "imputed": false,
+        "shap_logodds": -0.12608200311660767,
+        "direction": "toward negative"
+      },
+      {
+        "feature": "SkinThickness",
+        "model_input_value": 41.0,
+        "imputed": false,
+        "shap_logodds": 0.12551406025886536,
+        "direction": "toward positive"
+      },
+      {
+        "feature": "BloodPressure",
+        "model_input_value": 62.0,
+        "imputed": false,
+        "shap_logodds": 0.042756337672472,
+        "direction": "toward positive"
+      }
+    ],
+    "stability_weights": [
+      {
+        "seed": 0,
+        "Pregnancies": -0.016058706468907682,
+        "Glucose": -0.014505688492251992,
+        "BloodPressure": -0.032276941724437104,
+        "SkinThickness": 0.014363334048142298,
+        "Insulin": -0.0015524967715945682,
+        "BMI": 0.14902105330142282,
+        "DiabetesPedigreeFunction": 0.011434211172670407,
+        "Age": -0.0964364868602924
+      },
+      {
+        "seed": 1,
+        "Pregnancies": -0.005029668013383945,
+        "Glucose": -0.017312309601717285,
+        "BloodPressure": -0.016292397610875663,
+        "SkinThickness": 0.04272085220055067,
+        "Insulin": 0.016706314236014114,
+        "BMI": 0.1315676676741435,
+        "DiabetesPedigreeFunction": 0.011905812477243217,
+        "Age": -0.07622184623202129
+      },
+      {
+        "seed": 2,
+        "Pregnancies": -0.008483054733848689,
+        "Glucose": -0.028548515986307112,
+        "BloodPressure": 0.00512380444333738,
+        "SkinThickness": 0.01049766617644216,
+        "Insulin": 0.007843433245672883,
+        "BMI": 0.14675813689511433,
+        "DiabetesPedigreeFunction": 0.005127313207500479,
+        "Age": -0.096685677088065
+      },
+      {
+        "seed": 3,
+        "Pregnancies": -0.022157232021739755,
+        "Glucose": -0.01191013749136389,
+        "BloodPressure": -0.014414006779009699,
+        "SkinThickness": 0.024726350109820883,
+        "Insulin": 0.0006054575063147524,
+        "BMI": 0.13409003580102838,
+        "DiabetesPedigreeFunction": 0.020708125045253187,
+        "Age": -0.09271718912761369
+      },
+      {
+        "seed": 4,
+        "Pregnancies": -0.02226012896137435,
+        "Glucose": -0.009151986100900785,
+        "BloodPressure": -0.012266422393872845,
+        "SkinThickness": 0.011803387069259512,
+        "Insulin": 0.022855372476472863,
+        "BMI": 0.14050097451929788,
+        "DiabetesPedigreeFunction": 0.016458677393312852,
+        "Age": -0.09519664955891477
+      },
+      {
+        "seed": 5,
+        "Pregnancies": -0.019746260527448375,
+        "Glucose": -0.02178404552597617,
+        "BloodPressure": -0.007020252221473883,
+        "SkinThickness": 0.03381825437414158,
+        "Insulin": 0.014428032487574027,
+        "BMI": 0.14151852572303153,
+        "DiabetesPedigreeFunction": 0.021651752010479836,
+        "Age": -0.07208251357618702
+      },
+      {
+        "seed": 6,
+        "Pregnancies": -0.013039146858542443,
+        "Glucose": -0.017879176303055015,
+        "BloodPressure": -0.024318750794022157,
+        "SkinThickness": 0.021365360376603578,
+        "Insulin": 0.02074988458477907,
+        "BMI": 0.14892902862694787,
+        "DiabetesPedigreeFunction": 0.0019089776031051976,
+        "Age": -0.08372995244053001
+      },
+      {
+        "seed": 7,
+        "Pregnancies": -0.024139438142482338,
+        "Glucose": -0.026424681330148237,
+        "BloodPressure": -0.0028238382439732448,
+        "SkinThickness": 0.037076958573939084,
+        "Insulin": 0.013019479202099072,
+        "BMI": 0.15986520541191243,
+        "DiabetesPedigreeFunction": 0.008665134633200181,
+        "Age": -0.08431391592004213
+      },
+      {
+        "seed": 8,
+        "Pregnancies": -0.016637515111560915,
+        "Glucose": -0.018194461708402443,
+        "BloodPressure": -0.015663668075411013,
+        "SkinThickness": 0.0019032738832379433,
+        "Insulin": 0.007829219429675715,
+        "BMI": 0.14702892638799486,
+        "DiabetesPedigreeFunction": 0.025227826748446598,
+        "Age": -0.07692134441335974
+      },
+      {
+        "seed": 9,
+        "Pregnancies": -0.035869832960425396,
+        "Glucose": -0.0032918971588071703,
+        "BloodPressure": -0.014056466146711593,
+        "SkinThickness": 0.024316648981267088,
+        "Insulin": 0.009927852030080644,
+        "BMI": 0.14572015882024997,
+        "DiabetesPedigreeFunction": 0.0011839368024938227,
+        "Age": -0.09019189294467932
+      }
+    ],
+    "neighborhood": {
+      "n_perturbations": 5000,
+      "mean_prob": 0.33461084961891174,
+      "std_prob": 0.26302120089530945,
+      "share_predicted_positive": 0.2656
+    },
+    "interpretation": [
+      "XGBoost score P(positive) = 0.459 (uncalibrated) -> predicted diabetes-negative; recorded outcome diabetes-negative (correct).",
+      "Largest SHAP contribution: Glucose (+0.483 log-odds, toward positive); largest LIME weight: BMI (+0.140, rule 'BMI > 36.50').",
+      "Agreement: top-3 overlap 0.33, top-5 overlap 0.60, top-3 Jaccard 0.20, Spearman rank rho 0.19, sign agreement 0.62.",
+      "Opposite directions for Glucose;Insulin. LIME's sign reflects the patient's quartile bin versus other bins in the perturbed neighbourhood; SHAP's sign reflects the value versus the tree-path expectation. A sign difference shows the two baselines differ; it does not establish which method is 'right'.",
+      "LIME surrogate weighted R\u00b2 = 0.086 (low - the linear surrogate captures little of the model's local behaviour); surrogate-vs-model gap = 0.060.",
+      "Across 10 LIME seeds: mean top-3 Jaccard 0.58, mean rank rho 0.60; material sign flips (|w| >= 0.01 on both sides): none; any sign change incl. near-zero weights: BloodPressure;Insulin."
+    ],
+    "figures": {
+      "lime": "outputs/case_studies/case5_lime.png",
+      "shap_waterfall": "outputs/case_studies/case5_shap_waterfall.png",
+      "shap_force": "outputs/case_studies/case5_shap_force.png",
+      "side_by_side": "outputs/case_studies/case5_side_by_side.png",
+      "rank_slope": "outputs/case_studies/case5_rank_slope.png",
+      "stability": "outputs/case_studies/case5_stability.png",
+      "neighborhood": "outputs/case_studies/case5_neighborhood.png"
+    }
+  }
+]

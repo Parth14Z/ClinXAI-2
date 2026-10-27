@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local secrets must never be committed
+.streamlit/secrets.toml

@@ -1,0 +1,45 @@
+{
+  "zero_as_missing_columns": [
+    "Glucose",
+    "BloodPressure",
+    "SkinThickness",
+    "Insulin",
+    "BMI"
+  ],
+  "imputation": "median, fitted on training split only",
+  "train_medians": {
+    "Pregnancies": 3.0,
+    "Glucose": 117.0,
+    "BloodPressure": 72.0,
+    "SkinThickness": 29.0,
+    "Insulin": 125.0,
+    "BMI": 32.4,
+    "DiabetesPedigreeFunction": 0.3825,
+    "Age": 29.0
+  },
+  "train_missing_counts": {
+    "Glucose": 4,
+    "BloodPressure": 23,
+    "SkinThickness": 175,
+    "Insulin": 290,
+    "BMI": 9
+  },
+  "test_missing_counts": {
+    "Glucose": 1,
+    "BloodPressure": 12,
+    "SkinThickness": 52,
+    "Insulin": 84,
+    "BMI": 2
+  },
+  "feature_order": [
+    "Pregnancies",
+    "Glucose",
+    "BloodPressure",
+    "SkinThickness",
+    "Insulin",
+    "BMI",
+    "DiabetesPedigreeFunction",
+    "Age"
+  ],
+  "scaling": "none for XGBoost (tree splits are scale-invariant); StandardScaler for the logistic-regression baseline only"
+}

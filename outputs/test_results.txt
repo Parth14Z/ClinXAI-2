@@ -1,0 +1,100 @@
+........................................................................ [ 78%]
+....................                                                     [100%]
+=================================== PASSES ====================================
+_________ test_every_dashboard_page_renders[Home & clinical overview] _________
+---------------------------- Captured stderr setup ----------------------------
+2026-10-27 19:06:23.396 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+=========================== short test summary info ===========================
+PASSED tests/test_comparison_and_cases.py::test_identical_vectors_agree_perfectly
+PASSED tests/test_comparison_and_cases.py::test_ranking_uses_absolute_values
+PASSED tests/test_comparison_and_cases.py::test_known_overlap_and_jaccard
+PASSED tests/test_comparison_and_cases.py::test_reversed_ranking_gives_negative_spearman
+PASSED tests/test_comparison_and_cases.py::test_spearman_undefined_for_constant_vector
+PASSED tests/test_comparison_and_cases.py::test_direction_disagreement_respects_tolerance
+PASSED tests/test_comparison_and_cases.py::test_topk_rejects_invalid_k
+PASSED tests/test_comparison_and_cases.py::test_case_selection_picks_distinct_rule_matching_patients
+PASSED tests/test_comparison_and_cases.py::test_unavailable_case_is_reported_not_invented
+PASSED tests/test_comparison_and_cases.py::test_case5_falls_back_to_instability_when_no_sign_conflict
+PASSED tests/test_comparison_and_cases.py::test_confidence_bands
+PASSED tests/test_comparison_and_cases.py::test_relationship_analysis_reports_rho_and_p
+PASSED tests/test_comparison_and_cases.py::test_band_summary_orders_bands
+PASSED tests/test_comparison_and_cases.py::test_run_study_exposes_the_exact_draws_behind_its_table
+PASSED tests/test_data.py::test_raw_file_matches_openml_checksum
+PASSED tests/test_data.py::test_expected_columns_and_order
+PASSED tests/test_data.py::test_shape_and_class_counts
+PASSED tests/test_data.py::test_label_encoding_maps_named_classes
+PASSED tests/test_data.py::test_label_encoding_rejects_unknown_label
+PASSED tests/test_data.py::test_first_record_matches_source
+PASSED tests/test_data.py::test_zero_placeholders_are_counted
+PASSED tests/test_data.py::test_missing_file_raises
+PASSED tests/test_data.py::test_malformed_arff_raises
+PASSED tests/test_data.py::test_wrong_schema_raises
+PASSED tests/test_data.py::test_split_sizes_and_disjoint_ids
+PASSED tests/test_data.py::test_split_is_stratified
+PASSED tests/test_data.py::test_split_is_reproducible
+PASSED tests/test_data.py::test_split_rows_match_source_by_id
+PASSED tests/test_explainers.py::test_lime_explains_positive_class_for_all_features
+PASSED tests/test_explainers.py::test_lime_predict_fn_is_the_pipeline_positive_probability
+PASSED tests/test_explainers.py::test_lime_neighbourhood_is_recorded
+PASSED tests/test_explainers.py::test_lime_same_seed_is_deterministic
+PASSED tests/test_explainers.py::test_lime_stability_metrics
+PASSED tests/test_explainers.py::test_lime_rejects_bad_inputs
+PASSED tests/test_explainers.py::test_shap_shapes_and_feature_names
+PASSED tests/test_explainers.py::test_shap_additivity_in_logodds
+PASSED tests/test_explainers.py::test_shap_values_are_not_probability_contributions
+PASSED tests/test_explainers.py::test_shap_patient_explanation
+PASSED tests/test_explainers.py::test_shap_marks_imputed_values
+PASSED tests/test_explainers.py::test_lime_and_shap_explain_the_same_input
+PASSED tests/test_model.py::test_probabilities_in_range_and_sum_to_one
+PASSED tests/test_model.py::test_positive_class_is_column_one
+PASSED tests/test_model.py::test_margin_sigmoid_equals_probability
+PASSED tests/test_model.py::test_model_beats_chance_on_holdout
+PASSED tests/test_model.py::test_save_load_roundtrip
+PASSED tests/test_model.py::test_load_missing_model_raises
+PASSED tests/test_model.py::test_model_feature_names_match_config
+PASSED tests/test_model.py::test_reordered_columns_are_realigned
+PASSED tests/test_model.py::test_wrong_width_array_rejected
+PASSED tests/test_model.py::test_baseline_trains_and_predicts
+PASSED tests/test_model.py::test_metrics_reject_invalid_probabilities
+PASSED tests/test_model.py::test_metrics_confusion_matrix_counts
+PASSED tests/test_plotting_and_app.py::test_chart_functions_return_figures_and_save[<lambda>0]
+PASSED tests/test_plotting_and_app.py::test_chart_functions_return_figures_and_save[<lambda>1]
+PASSED tests/test_plotting_and_app.py::test_chart_functions_return_figures_and_save[<lambda>2]
+PASSED tests/test_plotting_and_app.py::test_chart_functions_return_figures_and_save[<lambda>3]
+PASSED tests/test_plotting_and_app.py::test_chart_functions_return_figures_and_save[<lambda>4]
+PASSED tests/test_plotting_and_app.py::test_chart_functions_return_figures_and_save[<lambda>5]
+PASSED tests/test_plotting_and_app.py::test_chart_functions_return_figures_and_save[<lambda>6]
+PASSED tests/test_plotting_and_app.py::test_chart_functions_return_figures_and_save[<lambda>7]
+PASSED tests/test_plotting_and_app.py::test_chart_functions_return_figures_and_save[<lambda>8]
+PASSED tests/test_plotting_and_app.py::test_chart_functions_return_figures_and_save[<lambda>9]
+PASSED tests/test_plotting_and_app.py::test_chart_functions_return_figures_and_save[<lambda>10]
+PASSED tests/test_plotting_and_app.py::test_chart_functions_return_figures_and_save[<lambda>11]
+PASSED tests/test_plotting_and_app.py::test_shap_native_plots_render
+PASSED tests/test_plotting_and_app.py::test_live_lime_chart_from_real_explanation
+PASSED tests/test_plotting_and_app.py::test_every_dashboard_page_renders[Home & clinical overview]
+PASSED tests/test_plotting_and_app.py::test_every_dashboard_page_renders[Diabetes prediction]
+PASSED tests/test_plotting_and_app.py::test_every_dashboard_page_renders[LIME patient explanation]
+PASSED tests/test_plotting_and_app.py::test_every_dashboard_page_renders[SHAP explainability]
+PASSED tests/test_plotting_and_app.py::test_every_dashboard_page_renders[Explanation comparison]
+PASSED tests/test_plotting_and_app.py::test_every_dashboard_page_renders[Experimental evaluation]
+PASSED tests/test_plotting_and_app.py::test_every_dashboard_page_renders[Case study explorer]
+PASSED tests/test_plotting_and_app.py::test_home_contains_disclaimer
+PASSED tests/test_plotting_and_app.py::test_prediction_page_shows_uncalibrated_warning
+PASSED tests/test_plotting_and_app.py::test_patient_switch_and_case_navigation
+PASSED tests/test_plotting_and_app.py::test_concurrent_sessions_get_their_own_shap_figures
+PASSED tests/test_preprocessing.py::test_zeros_become_nan_only_in_selected_columns
+PASSED tests/test_preprocessing.py::test_imputer_uses_training_medians_only
+PASSED tests/test_preprocessing.py::test_test_rows_imputed_with_training_statistics
+PASSED tests/test_preprocessing.py::test_no_nan_after_preprocessing_and_order_preserved
+PASSED tests/test_preprocessing.py::test_preprocessing_is_idempotent
+PASSED tests/test_preprocessing.py::test_feature_order_mismatch_rejected
+PASSED tests/test_preprocessing.py::test_valid_input_returns_ordered_frame
+PASSED tests/test_preprocessing.py::test_invalid_values_rejected[patch0-numeric]
+PASSED tests/test_preprocessing.py::test_invalid_values_rejected[patch1-finite]
+PASSED tests/test_preprocessing.py::test_invalid_values_rejected[patch2-finite]
+PASSED tests/test_preprocessing.py::test_invalid_values_rejected[patch3-outside]
+PASSED tests/test_preprocessing.py::test_invalid_values_rejected[patch4-outside]
+PASSED tests/test_preprocessing.py::test_invalid_values_rejected[patch5-numeric]
+PASSED tests/test_preprocessing.py::test_invalid_values_rejected[patch6-boolean]
+PASSED tests/test_preprocessing.py::test_missing_and_unknown_fields_rejected
+92 passed in 23.52s

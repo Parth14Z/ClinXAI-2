@@ -1,0 +1,91 @@
+﻿[PASS] 1 provenance | raw ARFF MD5 equals OpenML's published MD5 - 3cbaa3e54586aa88cf6aacb4033e4470
+[PASS] 1 provenance | SHA-256 matches provenance.json
+[PASS] 1 provenance | a one-byte-corrupted copy is rejected by ensure_dataset
+[PASS] 1 provenance | 768 rows x 8 features, 500 negative / 268 positive
+[PASS] 2 positive class | ARFF 'tested_positive' rows == encoded Outcome==1 rows - 268 raw positive rows
+[PASS] 2 positive class | classifier classes_ == [0, 1] - [np.int64(0), np.int64(1)]
+[PASS] 2 positive class | predict_proba[:, 1] == sigmoid(raw margin)
+[PASS] 2 positive class | column 1 ranks recorded positives higher (AUC > 0.5) - AUC with column 1 = 0.8217
+[PASS] 2 positive class | CLASS_NAMES[1] is the diabetes-positive class
+[PASS] 3 leakage | train/test patient ids disjoint and cover all 768 rows - train 614, test 154
+[PASS] 3 leakage | imputer medians == training-split medians - {'Glucose': np.float64(117.0), 'BloodPressure': np.float64(72.0), 'SkinThickness': np.float64(29.0), 'Insulin': np.float64(125.0), 'BMI': np.float64(32.4)}
+[PASS] 3 leakage | imputer medians are not full-data medians (at least one differs) - differs for ['BMI']
+[PASS] 3 leakage | refitting best params on the 614 training rows only reproduces the saved model (in memory) - best params {'learning_rate': 0.03, 'max_depth': 2, 'min_child_weight': 1, 'n_estimators': 250}
+[PASS] 3 leakage | no fit/tune/CV call in train_model.py receives test data - 4 fit-type calls inspected
+[PASS] 3 leakage | decision threshold fixed at 0.5
+[PASS] 4 SHAP additivity | test: base + sum(SHAP) == log-odds margin - max error 1.73e-06
+[PASS] 4 SHAP additivity | test: sigmoid(base + sum(SHAP)) == P(positive) - max error 1.62e-07
+[PASS] 4 SHAP additivity | test: errors match shap_additivity.json - naive prob + SHAP error 3.564
+[PASS] 4 SHAP additivity | train: base + sum(SHAP) == log-odds margin - max error 2.58e-06
+[PASS] 4 SHAP additivity | train: sigmoid(base + sum(SHAP)) == P(positive) - max error 2.61e-07
+[PASS] 4 SHAP additivity | train: errors match shap_additivity.json - naive prob + SHAP error 3.725
+[PASS] 4 SHAP additivity | shap_values.csv equals freshly computed SHAP values
+[PASS] 5 model metrics | xgboost: 8 metrics recomputed == model_metrics.json - accuracy 0.766, precision 0.688, recall 0.611, specificity 0.850, f1 0.647, roc_auc 0.822, average_precision 0.681, brier_score 0.163
+[PASS] 5 model metrics | xgboost: confusion matrix - TN 85 FP 15 FN 21 TP 33
+[PASS] 5 model metrics | xgboost: ROC-AUC 95% CI reproduced from the test predictions - 0.7457-0.8831
+[PASS] 5 model metrics | logistic_regression: 8 metrics recomputed == model_metrics.json - accuracy 0.708, precision 0.600, recall 0.500, specificity 0.820, f1 0.545, roc_auc 0.813, average_precision 0.673, brier_score 0.175
+[PASS] 5 model metrics | logistic_regression: confusion matrix - TN 82 FP 18 FN 27 TP 27
+[PASS] 5 model metrics | logistic_regression: ROC-AUC 95% CI reproduced from the test predictions - 0.7396-0.8729
+[PASS] 5 model metrics | paired AUC difference and CI reproduced - +0.0087 (-0.0177 to +0.0370)
+[PASS] 5 model metrics | CV AUC in metadata (XGB 0.841±0.020, LR 0.843±0.019)
+[PASS] 5 model metrics | README/report XGBoost figures match saved metrics to 3 d.p.
+[PASS] 6 explanation study | per-patient top3_overlap recomputed from raw attribution tables - 154 patients, 0 mismatches
+[PASS] 6 explanation study | per-patient jaccard_top3 recomputed from raw attribution tables - 154 patients, 0 mismatches
+[PASS] 6 explanation study | per-patient rank_spearman recomputed from raw attribution tables - 154 patients, 0 mismatches
+[PASS] 6 explanation study | per-patient n_direction_disagreements recomputed from raw attribution tables - 154 patients, 0 mismatches
+[PASS] 6 explanation study | per-patient stability_jaccard_top3 recomputed from raw attribution tables - 154 patients, 0 mismatches
+[PASS] 6 explanation study | per-patient stability_spearman recomputed from raw attribution tables - 154 patients, 0 mismatches
+[PASS] 6 explanation study | per-patient n_material_sign_flips recomputed from raw attribution tables - 154 patients, 0 mismatches
+[PASS] 6 explanation study | per-patient sign_consistency recomputed from raw attribution tables - 154 patients, 0 mismatches
+[PASS] 6 explanation study | headline summary recomputed == explanation_study_summary.json - top1_match_rate 0.734, mean_top3_overlap 0.768, mean_jaccard_top3 0.666, median_rank_spearman 0.821, share_with_direction_disagreement 0.260, median_lime_r2 0.232, mean_stability_jaccard_top3 0.879, share_material_sign_flip_across_seeds 0.110
+[PASS] 6 explanation study | LIME stability uses 10 seeds x 5,000 samples per patient
+[PASS] 6 explanation study | 8 Spearman relationships and Bonferroni flags recomputed
+[PASS] 6 explanation study | confidence bands recomputed from probabilities - {'high-confidence negative': 61, 'moderate': 59, 'borderline': 22, 'high-confidence positive': 12}
+[PASS] 7 case studies | selected patients are 245, 32, 78, 351, 486
+[PASS] 7 case studies | select_cases on study.csv reproduces the same selection
+[PASS] 7 case studies | case 1 = highest P among P >= 0.85 - P = 0.934, 12 candidates
+[PASS] 7 case studies | case 2 = lowest P among P <= 0.15 - P = 0.011, 61 candidates
+[PASS] 7 case studies | case 3 = P closest to 0.5 within [0.4, 0.6] - P = 0.508, 22 candidates
+[PASS] 7 case studies | case 4 = lowest rank rho among top-3 Jaccard <= 0.5 - rho = -0.238, Jaccard = 0.00
+[PASS] 7 case studies | case 5 = most direction disagreements (tie-break SHAP mass) - 2 features: Glucose;Insulin; max in pool = 2
+[PASS] 7 case studies | case 1: LIME table == the study's LIME draw
+[PASS] 7 case studies | case 1: stability weights == the study's 10-seed draws
+[PASS] 7 case studies | case 1: metrics block == study row
+[PASS] 7 case studies | case 1: SHAP margin/probability reproduce - P = 0.934, margin +2.645
+[PASS] 7 case studies | case 1: LIME instance == SHAP instance == preprocessed patient
+[PASS] 7 case studies | case 1: LIME explains P(class 1) == SHAP's sigmoid(margin)
+[PASS] 7 case studies | case 2: LIME table == the study's LIME draw
+[PASS] 7 case studies | case 2: stability weights == the study's 10-seed draws
+[PASS] 7 case studies | case 2: metrics block == study row
+[PASS] 7 case studies | case 2: SHAP margin/probability reproduce - P = 0.011, margin -4.525
+[PASS] 7 case studies | case 2: LIME instance == SHAP instance == preprocessed patient
+[PASS] 7 case studies | case 2: LIME explains P(class 1) == SHAP's sigmoid(margin)
+[PASS] 7 case studies | case 3: LIME table == the study's LIME draw
+[PASS] 7 case studies | case 3: stability weights == the study's 10-seed draws
+[PASS] 7 case studies | case 3: metrics block == study row
+[PASS] 7 case studies | case 3: SHAP margin/probability reproduce - P = 0.508, margin +0.033
+[PASS] 7 case studies | case 3: LIME instance == SHAP instance == preprocessed patient
+[PASS] 7 case studies | case 3: LIME explains P(class 1) == SHAP's sigmoid(margin)
+[PASS] 7 case studies | case 4: LIME table == the study's LIME draw
+[PASS] 7 case studies | case 4: stability weights == the study's 10-seed draws
+[PASS] 7 case studies | case 4: metrics block == study row
+[PASS] 7 case studies | case 4: SHAP margin/probability reproduce - P = 0.455, margin -0.181
+[PASS] 7 case studies | case 4: LIME instance == SHAP instance == preprocessed patient
+[PASS] 7 case studies | case 4: LIME explains P(class 1) == SHAP's sigmoid(margin)
+[PASS] 7 case studies | case 5: LIME table == the study's LIME draw
+[PASS] 7 case studies | case 5: stability weights == the study's 10-seed draws
+[PASS] 7 case studies | case 5: metrics block == study row
+[PASS] 7 case studies | case 5: SHAP margin/probability reproduce - P = 0.459, margin -0.166
+[PASS] 7 case studies | case 5: LIME instance == SHAP instance == preprocessed patient
+[PASS] 7 case studies | case 5: LIME explains P(class 1) == SHAP's sigmoid(margin)
+[PASS] 7 case studies | documented claim - case 1: P 0.934, truth positive, Jaccard 1.0, rho 0.93, R2 0.59, identical top-3 over 10 seeds
+[PASS] 7 case studies | documented claim - case 2: P 0.011, truth negative, no sign conflicts, surrogate predicts -0.20 (gap 0.21), Glucose <= 99 top in both
+[PASS] 7 case studies | documented claim - case 3: P 0.508, truth positive, BMI > 36.5 leads both, Glucose sign conflict, R2 0.07, 3 imputed
+[PASS] 7 case studies | documented claim - case 4: P 0.455, truth negative, Jaccard 0, rho -0.24, LIME top = Insulin, SHAP top = Glucose +0.42 pushed negative by LIME, R2 0.03
+[PASS] 7 case studies | documented claim - case 5: P 0.459, truth negative, Glucose & Insulin opposite signs, LIME Glucose negative in all 10 seeds, SHAP Glucose +0.48, R2 0.09
+[PASS] 7 case studies | cases 3-5: Glucose in (117, 140] bin with LIME weight between -0.011 and -0.022 - case 3: glucose 131, w -0.0220, case 4: glucose 137, w -0.0134, case 5: glucose 139, w -0.0112
+[PASS] 7 case studies | Insulin quartile edges collapse to 120 / 125 / 130 - [120. 125. 130.]
+[PASS] 8 reproducibility | SHAP beeswarm renders byte-identically twice (seeded jitter)
+[PASS] 8 reproducibility | fresh LIME explainer with the same seed gives identical weights (dashboard behaviour)
+
+89/89 checks passed

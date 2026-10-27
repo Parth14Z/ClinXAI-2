@@ -1,0 +1,17 @@
+[theme]
+base = "light"
+primaryColor = "#008F86"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F1F7F6"
+textColor = "#273444"
+
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false
+
+[client]
+# Public viewers see the app only, not the developer menu or "Deploy" button.
+toolbarMode = "viewer"
+showErrorDetails = "none"

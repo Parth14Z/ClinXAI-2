@@ -1,0 +1,17 @@
+{
+  "dataset": "Pima Indians Diabetes Database",
+  "source": "OpenML dataset 37 (version 1)",
+  "download_url": "https://openml.org/data/v1/download/37/diabetes.arff",
+  "metadata_url": "https://www.openml.org/api/v1/json/data/37",
+  "original_source": "UCI Machine Learning Repository (Pima Indians Diabetes Database); the dataset is no longer listed on the current UCI site",
+  "original_owner": "National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK)",
+  "donor": "Vincent Sigillito, Applied Physics Laboratory, The Johns Hopkins University (1990)",
+  "openml_licence_field": "Public",
+  "citation": "Smith, J.W., Everhart, J.E., Dickson, W.C., Knowler, W.C., & Johannes, R.S. (1988). Using the ADAP learning algorithm to forecast the onset of diabetes mellitus. Proc. Symposium on Computer Applications and Medical Care, 261-265.",
+  "population": "Females aged >= 21 years of Pima Indian heritage living near Phoenix, Arizona, USA",
+  "label_definition": "tested_positive = signs of diabetes by WHO criteria (2-h post-load plasma glucose >= 200 mg/dL at a survey examination, or found during routine medical care)",
+  "md5_expected": "3cbaa3e54586aa88cf6aacb4033e4470",
+  "md5_actual": "3cbaa3e54586aa88cf6aacb4033e4470",
+  "sha256": "4eddd5b2b64679e8888348e306520a393d6a28e1ddc9643cfb76fc5d912d6d40",
+  "retrieved_on": "2026-10-27"
+}
